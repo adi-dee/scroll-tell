@@ -16,6 +16,20 @@ body {
   font-size: 24px;
 }
 
+
+ h1, h2 {
+  color: white;
+  font-family: Trebuchet MS;
+  text-align: center;
+}
+
+h1 {
+  font-size: 6rem;
+  margin-top: 30vh;
+}
+
+h2 { font-size: 3rem; }
+
 p,
 h1,
 h2,
