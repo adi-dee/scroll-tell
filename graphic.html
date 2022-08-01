@@ -42,40 +42,7 @@
         opacity: 0.5;
       }
 
-      section {
-        height: 100%;
-      }
-      div {
-        height: 100%;
-        max-width: 1000px;
-        margin: 50px auto;
-        text-align: center;
-        padding: 50px;
-      }
-      div.step {
-        background: #fff;
-        color: #fff;
-      }
-      div.step.active {
-        background: #000;
-        transition: 1s linear all;
-      }
-      div.step.active.blue {
-        background: blue;
-        transition: 1s linear all;
-      }
-      div.step.active.blinky {
-        animation: blinker 1s step-start infinite;
-      }
-      @keyframes blinker {
-        50% {
-          opacity: 0;
-        }
-      }
-      div.step.inactive {
-        background: #fff;
-        transition: 1s linear all;
-      }
+
       #background-video {
         width: 100vw;
         object-fit: cover;
@@ -101,19 +68,7 @@
       .intro__dek {
         color: #fffff1;
       }
-      .bgimg-1,
-      .bgimg-2,
-      .bgimg-3 {
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-      /* First image (Logo. Full height) */
-      .bgimg-1 {
-        background-image: url("https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/old_man_aral_sea.jpg?v=1659343046114");
-        min-height: 100%;
-      }
+      
       #scroll {
   position: relative;
 }
@@ -144,6 +99,19 @@
   -moz-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+      .scroll__text {
+  padding: 0 1rem;
+  max-width: 30rem;
+}
+
+.step {
+  opacity: 0;
+  padding: 1rem;
+}
+
+.step.is-active {
+  opacity: 1;
 }
       
     </style>
@@ -193,56 +161,84 @@
 		</div>
 	</div>
 </section>
-
-    <section>
-      <div class="step">
-        <h3>“First the sea left the people, then the people left the sea.”</h3>
-      
-</div>
-        <p>Ali Shaddinov - Fisherman, Muynak, Uzbekistan</p>
-        <p>Photographer: Jared Paisley</p>
-        <p></p>
-        <p>
-          Ali was born in 1951 and he has lived in Muynak since he was 3 years
-          old. His parents were fishermen and he worked as a fisherman before
-          the Aral Sea receded. The last time he caught a fish was in 1977.
-        </p>
-        <p>
-          At its peak in 1957, the Aral Sea produced almost 50,000 tons of fish.
-          The receding water level and rising salinity of the sea meant that by
-          the 1980s, few of the 20 native fish species were left, and by 1987,
-          no fish could be caught commercially.
-        </p>
-        <div class="bgimg-1">
-          
-        </div>
-      </div>
-      <div class="step"><p>As objects scroll into view...</p></div>
-      <div class="step blue"><p>they can change appearance...</p></div>
-      <div class="step blinky"><p>and draw attention to themselves</p></div>
-      <div class="step"><p>and if you didn't notice...</p></div>
-      <div class="step"><p>the old ones can disappear</p></div>
-    </section>
+    
+    
 
     <script type="text/javascript">
       const scroller = scrollama();
+// using d3 for convenience, and storing a selected elements
+var $container = d3.select('#scroll');
+var $graphic = container.select('.scroll__graphic');
+var $chart = graphic.select('.chart');
+var $text = container.select('.scroll__text');
+var $step = text.selectAll('.step');
 
-      scroller
-        .setup({
-          step: ".step",
-        })
-        .onStepEnter((response) => {
-          console.log(response);
-          response.element.classList.remove("inactive");
-          response.element.classList.add("active");
-        })
-        .onStepExit((response) => {
-          console.log(response);
-          response.element.classList.remove("active");
-          response.element.classList.add("inactive");
-        });
+// initialize the scrollama
+var scroller = scrollama();
 
-      window.addEventListener("resize", scroller.resize);
+// resize function to set dimensions on load and on page resize
+function handleResize() { ... }
+
+// scrollama event handlers
+function handleStepEnter(response) { ... }
+
+function handleContainerEnter(response) { ... }
+
+function handleContainerExit(response) { ... }
+
+// kick-off code to run once on load
+function init() {...}
+
+// start it up
+init();
+                 
+                 function init() {
+	// 1. call a resize on load to update width/height/position of elements
+	handleResize();
+
+	// 2. setup the scrollama instance
+	// 3. bind scrollama event handlers (this can be chained like below)
+	scroller
+		.setup({
+			container: '#scroll', // our outermost scrollytelling element
+			graphic: '.scroll__graphic', // the graphic
+			text: '.scroll__text', // the step container
+			step: '.scroll__text .step', // the step elements
+			offset: 0.5, // set the trigger to be 1/2 way down screen
+			debug: true, // display the trigger offset for testing
+		})
+		.onStepEnter(handleStepEnter)
+		.onContainerEnter(handleContainerEnter)
+		.onContainerExit(handleContainerExit);
+
+	// setup resize event
+	window.addEventListener('resize', handleResize);
+}
+                 function handleResize() {
+	// 1. update height of step elements for breathing room between steps
+	var stepHeight = Math.floor(window.innerHeight * 0.75);
+	$step.style('height', stepHeight + 'px');
+
+	// 2. update height of graphic element
+	var bodyWidth = d3.select('body').node().offsetWidth;
+
+	$graphic
+		.style('height', window.innerHeight + 'px');
+
+	// 3. update width of chart by subtracting from text width
+	var chartMargin = 32;
+	var textWidth = $text.node().offsetWidth;
+	var chartWidth = $graphic.node().offsetWidth - textWidth - chartMargin;
+	// make the height 1/2 of viewport
+	var chartHeight = Math.floor(window.innerHeight / 2);
+
+	$chart
+		.style('width', chartWidth + 'px')
+		.style('height', chartHeight + 'px');
+
+	// 4. tell scrollama to update new element dimensions
+	scroller.resize();
+}
     </script>
   </body>
 </html>
