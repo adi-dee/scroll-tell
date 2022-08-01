@@ -1,47 +1,119 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Scrollytelling - Simple</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Scrollama: Sticky Side Example</title>
+    <meta name="description" content="Scrollama: Sticky Side Example" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #intro {
+  max-width: 40rem;
+  margin: 1rem auto;
+  text-align: center;
+  margin-bottom: 320px;
+}
 
-    <script src="https://unpkg.com/intersection-observer"></script>
-    <script src="https://unpkg.com/scrollama"></script>
+.intro__hed {
+  font-size: 3em;
+  margin: 2rem auto 0.5rem auto;
+}
 
-    <style type="text/css">
-      html,
-      body {
-        width: 100%;
-        height: 100%;
-        font-family: sans-serif;
-        color: #555;
-        font-size: 1em;
-      }
-      h1,
-      h2,
-      h3 {
-        color: white;
-        font-family: Trebuchet MS;
-        text-align: center;
+.intro__dek {
+  color: rgba(255,255,255,0.7);
+}
+      
+      #scrolly {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 1rem;
+       background-color: rgba(0,0,0,0.95);
       }
 
-      h1 {
-        font-size: 6rem;
-        margin-top: 30vh;
+      #scrolly > * {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
       }
 
-      h2 {
-        font-size: 3rem;
+      article {
+        position: relative;
+        padding: 0 1rem;
+        max-width: 20rem;
       }
 
-      h3 {
-        font-size: 2rem;
+      figure {
+        position: -webkit-sticky;
+        position: sticky;
+        margin: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        z-index: 0; 
       }
-      p {
-        color: white;
+        figure img {
+        padding: 0.1rem;
+        background-color: rgba(255,255,255,0.2);
+      }
+      
+      .frame {
+        position: -webkit-sticky;
+        position: sticky;
+        margin: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        z-index: 0; 
+        background-color: rgba(0,0,0,0.95);
+      }
+      
+      figcaption{
         text-align: left;
-        width: 50%;
-        opacity: 0.5;
+        padding: 0.5rem;
+        font-size: 0.8rem;
+        font-weight: 1;
+        color: rgba(255,255,255,0.6);
+        
+      }
+/*used to display step numbers*/
+      figure p {
+        text-align: center;
+        padding: 1rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -moz-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-size: 8rem;
+        font-weight: 900;
+        color: #fff;
       }
 
+      .step {
+        margin: 0 auto 1rem auto;
+        color: #fff;
+        opacity: 0.2;
+      }
+
+      .step:last-child {
+        margin-bottom: 0;
+      }
+
+      .step.is-active {
+        color: #fff;
+        opacity: 1;
+      }
+
+      .step p {
+        text-align: left;
+        padding: 1rem;
+        font-size: 1.2rem;
+        background-color: rgba(255,255,255,0.1);
+      }
 
       #background-video {
         width: 100vw;
@@ -53,192 +125,166 @@
         bottom: 0;
         z-index: -1;
       }
-
-      #intro {
-        max-width: 40rem;
-        margin: 1rem auto;
-        text-align: center;
-        margin-bottom: 320px;
-      }
-
-      .intro__hed {
-        margin: 5rem auto 0.5rem auto;
-      }
-
-      .intro__dek {
-        color: #fffff1;
-      }
-      
-      #scroll {
-  position: relative;
-}
-
-.scroll__graphic {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: auto;
-  width: 100%;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-
-.scroll__graphic.is-fixed {
-  position: fixed;
-}
-
-.scroll__graphic.is-bottom {
-  bottom: 0;
-  top: auto;
-}
-      .scroll__graphic .chart {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  -moz-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-      .scroll__text {
-  padding: 0 1rem;
-  max-width: 30rem;
-}
-
-.step {
-  opacity: 0;
-  padding: 1rem;
-}
-
-.step.is-active {
-  opacity: 1;
-}
-      
     </style>
   </head>
+
   <body>
-    <section id="intro">
-      <video
-        id="background-video"
-        autoplay
-        loop
-        muted
-        poster="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/okavango.png?v=1659356636360"
-      >
-        <source
-          src="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/okavango.mp4?v=1659353211765"
-          type="video/mp4"
-        />
-      </video>
-      <h1 class="intro__hed">No Life Without Water</h1>
-      <h3 class="intro__dek">Start scrolling to see how it works.</h3>
-    </section>
-    
-    <section id="scroll">
-	<!--  graphic container  -->
-        <div class="scroll__graphic">
+    <main>
+      <section id="intro">
+        <video
+          id="background-video"
+          autoplay
+          loop
+          muted
+          poster="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/okavango.png?v=1659356636360"
+        >
+          <source
+            src="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/okavango.mp4?v=1659353211765"
+            type="video/mp4"
+          />
+        </video>
+
+        <h1 class="intro__hed">No Life Without Water</h1>
+        <p class="intro__dek">“First the sea left the people, then the people left the sea.”</p>
+
+      </section>
+
+      <section id="scrolly">
+        <article>
+          <!--  step/text container  -->
+          <div class="scroll__text">
+            <div class="step" data-step="1">
+
+              <p>This is Ali Shaddinov</p>
+            </div>
+            <div class="step" data-step="2">
+              <p>
+                Ali Shaddinov is a fisherman from Muynak, Uzbekistan. He was born in 1951 and he has lived in Muynak since he was three
+                years old. 
+              </p>
+            </div>
+            <div class="step" data-step="3">
+              <p> Ali's parents were fishermen and he worked as a
+                fisherman before the Aral Sea receded.  The Aral Sea was once the world's fourth-largest freshwater lake. The last time Ali caught a fish was in 1977.
+                
+              </p>
+            </div>
+            <div class="step" data-step="4">
+              <p>At its peak in 1957, the Aral Sea produced almost 50,000 tons of
+                fish. The receding water level and rising salinity of the sea
+                meant that by the 1980s, few of the 20 native fish species were
+                left.
+                
+              </p>
+            </div>
+            <div class="step" data-step="5">
+              <p> 
+           In its heyday Muynak was one of the largest fishing cities in Central Asia, the clear water was full of fish and the beaches were a bustling tourist destination. 
+ </p>
+            </div>
+              <div class="step" data-step="6">
+              <p> 
+Now the main attraction of Muynak city is the ship graveyard and, due to climate change, the city has turned into a desert. The local economy has evaporated along with the water.
+ </p>
+            </div>
+          </div>
+        </article>
+
+        <!--  graphic container  -->
+        <figure><div class="frame">
+          
+          
+          <p>0</p>
           <!--   actual graphic/chart   -->
-		<img src="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/old_man_aral_sea.jpg?v=1659343046114" width="50%">
-		<div class="chart">
+          <img
+            src="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/old_man_aral_sea.jpg?v=1659343046114"
+            width="100%"
+          />
+          <figcaption>Photographer: Jared Paisley</figcaption></div>
+        </figure>
+      </section>
       
-			<p>0</p>
-      </div>
-  </div>
-      	<!--  step/text container  -->
-	<div class="scroll__text">
-		<div class="step"  data-step="1">
-			<p>Ali Shaddinov - Fisherman, Muynak, Uzbekistan</p>
-		</div>
-		<div class="step" data-step="2">
-			<p>Photographer: Jared Paisley</p>
-		</div>
-		<div class="step" data-step="3">
-			<p>Ali was born in 1951 and he has lived in Muynak since he was 3 years</p>
-		</div>
-		<div class="step" data-step="4">
-			<p>His parents were fishermen and he worked as a fisherman before
-          the Aral Sea receded.</p>
-		</div>
-	</div>
-</section>
-    
-    
+     
 
-    <script type="text/javascript">
-      const scroller = scrollama();
-// using d3 for convenience, and storing a selected elements
-var $container = d3.select('#scroll');
-var $graphic = container.select('.scroll__graphic');
-var $chart = graphic.select('.chart');
-var $text = container.select('.scroll__text');
-var $step = text.selectAll('.step');
+      <section id="outro"></section>
+    </main>
 
-// initialize the scrollama
-var scroller = scrollama();
+    <!-- <div class='debug'></div> -->
+    <script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="../stickyfill.min.js"></script>
+    <script src="../scrollama.min.js"></script>
+    <script>
+      // using d3 for convenience
+      var main = d3.select("main");
+      var scrolly = main.select("#scrolly");
+      var figure = scrolly.select("figure");
+      var article = scrolly.select("article");
+      var step = article.selectAll(".step");
 
-// resize function to set dimensions on load and on page resize
-function handleResize() { ... }
+      // initialize the scrollama
+      var scroller = scrollama();
 
-// scrollama event handlers
-function handleStepEnter(response) { ... }
+      // generic window resize listener event
+      function handleResize() {
+        // 1. update height of step elements
+        var stepH = Math.floor(window.innerHeight * 0.75);
+        step.style("height", stepH + "px");
 
-function handleContainerEnter(response) { ... }
+        var figureHeight = window.innerHeight / 2;
+        var figureMarginTop = (window.innerHeight - figureHeight) / 2;
 
-function handleContainerExit(response) { ... }
+        figure
+          .style("height", figureHeight + "px")
+          .style("top", figureMarginTop + "px");
 
-// kick-off code to run once on load
-function init() {...}
+        // 3. tell scrollama to update new element dimensions
+        scroller.resize();
+      }
 
-// start it up
-init();
-                 
-                 function init() {
-	// 1. call a resize on load to update width/height/position of elements
-	handleResize();
+      // scrollama event handlers
+      function handleStepEnter(response) {
+        console.log(response);
+        // response = { element, direction, index }
 
-	// 2. setup the scrollama instance
-	// 3. bind scrollama event handlers (this can be chained like below)
-	scroller
-		.setup({
-			container: '#scroll', // our outermost scrollytelling element
-			graphic: '.scroll__graphic', // the graphic
-			text: '.scroll__text', // the step container
-			step: '.scroll__text .step', // the step elements
-			offset: 0.5, // set the trigger to be 1/2 way down screen
-			debug: true, // display the trigger offset for testing
-		})
-		.onStepEnter(handleStepEnter)
-		.onContainerEnter(handleContainerEnter)
-		.onContainerExit(handleContainerExit);
+        // add color to current step only
+        step.classed("is-active", function (d, i) {
+          return i === response.index;
+        });
 
-	// setup resize event
-	window.addEventListener('resize', handleResize);
-}
-                 function handleResize() {
-	// 1. update height of step elements for breathing room between steps
-	var stepHeight = Math.floor(window.innerHeight * 0.75);
-	$step.style('height', stepHeight + 'px');
+        // update graphic based on step
+        figure.select("p").text(response.index + 1);
+      }
 
-	// 2. update height of graphic element
-	var bodyWidth = d3.select('body').node().offsetWidth;
+      function setupStickyfill() {
+        d3.selectAll(".sticky").each(function () {
+          Stickyfill.add(this);
+        });
+      }
 
-	$graphic
-		.style('height', window.innerHeight + 'px');
+      function init() {
+        setupStickyfill();
 
-	// 3. update width of chart by subtracting from text width
-	var chartMargin = 32;
-	var textWidth = $text.node().offsetWidth;
-	var chartWidth = $graphic.node().offsetWidth - textWidth - chartMargin;
-	// make the height 1/2 of viewport
-	var chartHeight = Math.floor(window.innerHeight / 2);
+        // 1. force a resize on load to ensure proper dimensions are sent to scrollama
+        handleResize();
 
-	$chart
-		.style('width', chartWidth + 'px')
-		.style('height', chartHeight + 'px');
+        // 2. setup the scroller passing options
+        // 		this will also initialize trigger observations
+        // 3. bind scrollama event handlers (this can be chained like below)
+        scroller
+          .setup({
+            step: "#scrolly article .step",
+            offset: 0.33,
+            debug: false,
+          })
+          .onStepEnter(handleStepEnter);
 
-	// 4. tell scrollama to update new element dimensions
-	scroller.resize();
-}
+        // setup resize event
+        window.addEventListener("resize", handleResize);
+      }
+
+      // kick things off
+      init();
     </script>
   </body>
 </html>
