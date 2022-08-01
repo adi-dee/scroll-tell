@@ -125,6 +125,25 @@
         bottom: 0;
         z-index: -1;
       }
+      .bgimg-1,
+      .bgimg-2,
+      .bgimg-3 {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      /* First image (Logo. Full height) */
+      .bgimg-1 {
+        background-image: url("https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/old_man_aral_sea.jpg?v=1659343046114");
+        min-height: 100%;
+      }
+      
+      /* Second image (Logo. Full height) */
+      .bgimg-2 {
+        background-image: url("https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/aerial_aral.jpg?v=1659384031109");
+        min-height: 100%;
+      }
     </style>
   </head>
 
@@ -217,7 +236,13 @@
       </section>
       
 
-      <section id="outro"></section>
+      <section id="outro">        <div class="bgimg-2"><p>
+        
+        </p>
+          
+        </div> <div class="bgimg-1">
+          
+        </div></section>
     </main>
 
     <script src="d3.min.js"></script>
