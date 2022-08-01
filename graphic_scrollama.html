@@ -13,7 +13,7 @@
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        background-color: #f3f3f3;
+
         padding: 1rem;
       }
 
@@ -57,8 +57,8 @@
 
       .step {
         margin: 0 auto 2rem auto;
-        background-color: #3b3b3b;
         color: #fff;
+        opacity: 0.5;
       }
 
       .step:last-child {
@@ -66,61 +66,90 @@
       }
 
       .step.is-active {
-        background-color: goldenrod;
-        color: #3b3b3b;
+        color: #fff;
+        opacity: 1;
       }
 
       .step p {
-        text-align: center;
+        text-align: left;
         padding: 1rem;
-        font-size: 1.5rem;
+        font-size: 1rem;
+      }
+
+      #background-video {
+        width: 100vw;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
       }
     </style>
   </head>
 
   <body>
-
     <main>
       <section id="intro">
-        <h1 class="intro__hed">Sticky Side Example</h1>
-        <p class="intro__dek">
-          Start scrolling to see how it works.
-        </p>
+        <video
+          id="background-video"
+          autoplay
+          loop
+          muted
+          poster="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/okavango.png?v=1659356636360"
+        >
+          <source
+            src="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/okavango.mp4?v=1659353211765"
+            type="video/mp4"
+          />
+        </video>
+
+        <h1 class="intro__hed">No Life Without Water</h1>
+        <p class="intro__dek">Start scrolling to see how it works.</p>
       </section>
-      
-         <section id="scroll">
-	
-  
-</section>
-    
 
       <section id="scrolly">
         <article>
-          	<!--  step/text container  -->
-	<div class="scroll__text">
-		<div class="step"  data-step="1">
-			<p>Ali Shaddinov is a fisherman from Muynak, Uzbekistan</p>
-		</div>
-		<div class="step" data-step="2">
-			<p>Ali was born in 1951 and he has lived in Muynak since he was 3 years old. His parents were fishermen and he worked as a fisherman before the Aral Sea receded. The last time he caught a fish was in 1977.</p>
-		</div>
-		<div class="step" data-step="3">
-			<p>At its peak in 1957, the Aral Sea produced almost 50,000 tons of fish. The receding water level and rising salinity of the sea meant that by the 1980s, few of the 20 native fish species were left.</p>
-		</div>
-		<div class="step" data-step="4">
-			<p>His parents were fishermen and he worked as a fisherman before
-          the Aral Sea receded.</p>
-		</div>
-	</div>
+          <!--  step/text container  -->
+          <div class="scroll__text">
+            <div class="step" data-step="1">
+              <p>Ali Shaddinov is a fisherman from Muynak, Uzbekistan</p>
+            </div>
+            <div class="step" data-step="2">
+              <p>
+                Ali was born in 1951 and he has lived in Muynak since he was 3
+                years old. His parents were fishermen and he worked as a
+                fisherman before the Aral Sea receded. The last time he caught a
+                fish was in 1977.
+              </p>
+            </div>
+            <div class="step" data-step="3">
+              <p>
+                At its peak in 1957, the Aral Sea produced almost 50,000 tons of
+                fish. The receding water level and rising salinity of the sea
+                meant that by the 1980s, few of the 20 native fish species were
+                left.
+              </p>
+            </div>
+            <div class="step" data-step="4">
+              <p>
+                “First the sea left the people, then the people left the sea.”
+              </p>
+            </div>
+          </div>
         </article>
 
-        <!--  graphic container  -->        
+        <!--  graphic container  -->
         <figure>
           <p>0</p>
           <!--   actual graphic/chart   -->
-		<img src="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/old_man_aral_sea.jpg?v=1659343046114" width="100%">
-        <figcaption>Ali Shaddinov - Fisherman, Muynak, Uzbekistan</figcaption></figure>
-        
+          <img
+            src="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/old_man_aral_sea.jpg?v=1659343046114"
+            width="100%"
+          />
+          <figcaption>Ali Shaddinov - Fisherman, Muynak, Uzbekistan</figcaption>
+        </figure>
       </section>
 
       <section id="outro"></section>
@@ -165,7 +194,7 @@
         // response = { element, direction, index }
 
         // add color to current step only
-        step.classed("is-active", function(d, i) {
+        step.classed("is-active", function (d, i) {
           return i === response.index;
         });
 
@@ -174,7 +203,7 @@
       }
 
       function setupStickyfill() {
-        d3.selectAll(".sticky").each(function() {
+        d3.selectAll(".sticky").each(function () {
           Stickyfill.add(this);
         });
       }
@@ -192,7 +221,7 @@
           .setup({
             step: "#scrolly article .step",
             offset: 0.33,
-            debug: true
+            debug: true,
           })
           .onStepEnter(handleStepEnter);
 
