@@ -12,12 +12,12 @@
         width: 100%;
         height: 100%;
         font-family: sans-serif;
-        color: #555;   
+        color: #555;
         font-size: 1em;
       }
       h1,
-      h2, 
-      h3{
+      h2,
+      h3 {
         color: white;
         font-family: Trebuchet MS;
         text-align: center;
@@ -31,14 +31,15 @@
       h2 {
         font-size: 3rem;
       }
-      
+
       h3 {
         font-size: 2rem;
       }
-      p{
+      p {
         color: white;
         text-align: left;
         width: 50%;
+        opacity: 0.5;
       }
 
       section {
@@ -56,7 +57,7 @@
         color: #fff;
       }
       div.step.active {
-        background: #ff9900;
+        background: #000;
         transition: 1s linear all;
       }
       div.step.active.blue {
@@ -75,44 +76,44 @@
         background: #fff;
         transition: 1s linear all;
       }
-#background-video {
-  width: 100vw;
-  object-fit: cover;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-}
-      
-#intro {
-  max-width: 40rem;
-  margin: 1rem auto;
-  text-align: center;
-  margin-bottom: 320px;
-}
+      #background-video {
+        width: 100vw;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+      }
 
-.intro__hed {
+      #intro {
+        max-width: 40rem;
+        margin: 1rem auto;
+        text-align: center;
+        margin-bottom: 320px;
+      }
 
-  margin: 5rem auto 0.5rem auto;
-}
+      .intro__hed {
+        margin: 5rem auto 0.5rem auto;
+      }
 
-.intro__dek {
-  color: #fffff1;
-}
-.bgimg-1, .bgimg-2, .bgimg-3 {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+      .intro__dek {
+        color: #fffff1;
+      }
+      .bgimg-1,
+      .bgimg-2,
+      .bgimg-3 {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
       /* First image (Logo. Full height) */
-.bgimg-1 {
-  background-image: url('https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/old_man_aral_sea.jpg?v=1659343046114');
-  min-height: 100%;
-}
-
+      .bgimg-1 {
+        background-image: url("https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/old_man_aral_sea.jpg?v=1659343046114");
+        min-height: 100%;
+      }
     </style>
   </head>
   <body>
@@ -134,19 +135,25 @@
     </section>
 
     <section>
-      <div class="bgimg-1"><h3>A Simple Scrollytelling Experience</h3>
-       <p>
-        Ali Shaddinov - Fisherman, Muynak, Uzbekistan</p>
-      <p>
-Photographer: Jared Paisley
-      </p>
-      <p>
-        “First the sea left the people, then the people left the sea.” </p>
-      <p>
-Ali was born in 1951 and he has lived in Muynak since he was 3 years old. His parents were fishermen and he worked as a fisherman before the Aral Sea receded. The last time he caught a fish was in 1977.
-  </p><p>
-At its peak in 1957, the Aral Sea produced almost 50,000 tons of fish. The receding water level and rising salinity of the sea meant that by the 1980s, few of the 20 native fish species were left, and by 1987, no fish could be caught commercially.
-</p>
+      <div class="step">
+        <h3>A Simple Scrollytelling Experience</h3>
+        <p>Ali Shaddinov - Fisherman, Muynak, Uzbekistan</p>
+        <p>Photographer: Jared Paisley</p>
+        <p>“First the sea left the people, then the people left the sea.”</p>
+        <p>
+          Ali was born in 1951 and he has lived in Muynak since he was 3 years
+          old. His parents were fishermen and he worked as a fisherman before
+          the Aral Sea receded. The last time he caught a fish was in 1977.
+        </p>
+        <p>
+          At its peak in 1957, the Aral Sea produced almost 50,000 tons of fish.
+          The receding water level and rising salinity of the sea meant that by
+          the 1980s, few of the 20 native fish species were left, and by 1987,
+          no fish could be caught commercially.
+        </p>
+        <div class="bgimg-1">
+          
+        </div>
       </div>
       <div class="step"><p>As objects scroll into view...</p></div>
       <div class="step blue"><p>they can change appearance...</p></div>
