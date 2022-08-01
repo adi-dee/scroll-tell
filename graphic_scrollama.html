@@ -16,7 +16,7 @@
 }
 
 .intro__hed {
-  font-size: 2em;
+  font-size: 3em;
   margin: 2rem auto 0.5rem auto;
 }
 
@@ -60,7 +60,14 @@
       }
       
       .frame {
-        background-color: rgba(255,255,255,0.2);
+        position: -webkit-sticky;
+        position: sticky;
+        margin: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        z-index: 0; 
+        background-color: rgba(0,0,0,0.95);
       }
       
       figcaption{
@@ -69,7 +76,6 @@
         font-size: 0.8rem;
         font-weight: 1;
         color: rgba(255,255,255,0.6);
-        background-color: rgba(0,0,0,0.95);
         
       }
 /*used to display step numbers*/
@@ -106,6 +112,7 @@
         text-align: left;
         padding: 1rem;
         font-size: 1.2rem;
+        background-color: rgba(255,255,255,0.1);
       }
 
       #background-video {
@@ -139,6 +146,9 @@
 
         <h1 class="intro__hed">No Life Without Water</h1>
         <p class="intro__dek">Start scrolling to see how it works.</p>
+                      <h3>
+                “First the sea left the people, then the people left the sea.” 
+              </h3>
       </section>
 
       <section id="scrolly">
@@ -146,10 +156,8 @@
           <!--  step/text container  -->
           <div class="scroll__text">
             <div class="step" data-step="1">
-              <h3>
-                “First the sea left the people, then the people left the sea.” 
-              </h3>
-              <p> (Ali Shaddinov,Muynak, Uzbekistan)</p>
+
+              <p>This is Ali Shaddinov</p>
             </div>
             <div class="step" data-step="2">
               <p>
@@ -185,7 +193,7 @@ Now the main attraction of Muynak city is the ship graveyard and, due to climate
         </article>
 
         <!--  graphic container  -->
-        <div class="frame"><figure>
+        <figure><div class="frame">
           
           
           <p>0</p>
@@ -194,8 +202,8 @@ Now the main attraction of Muynak city is the ship graveyard and, due to climate
             src="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/old_man_aral_sea.jpg?v=1659343046114"
             width="100%"
           />
-          <figcaption>Photographer: Jared Paisley</figcaption>
-        </figure></div>
+          <figcaption>Photographer: Jared Paisley</figcaption></div>
+        </figure>
       </section>
 
       <section id="outro"></section>
