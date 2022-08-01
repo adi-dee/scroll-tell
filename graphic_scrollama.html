@@ -8,6 +8,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
     <style>
+      #intro {
+  max-width: 40rem;
+  margin: 1rem auto;
+  text-align: center;
+  margin-bottom: 320px;
+}
+
+.intro__hed {
+  font-size: 2em;
+  margin: 2rem auto 0.5rem auto;
+}
+
+.intro__dek {
+  color: rgba(255,255,255,0.7);
+}
+      
       #scrolly {
         position: relative;
         display: -webkit-box;
@@ -32,15 +48,19 @@
       figure {
         position: -webkit-sticky;
         position: sticky;
-        width: 100%;
         margin: 0;
-        padding: 0.5rem;
-        background-color: rgba(0,0,255,0.8);
         -webkit-transform: translate3d(0, 0, 0);
         -moz-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
-        z-index: 0;
-        
+        z-index: 0; 
+      }
+        figure img {
+        padding: 0.1rem;
+        background-color: rgba(255,255,255,0.2);
+      }
+      
+      .frame {
+        background-color: rgba(255,255,255,0.2);
       }
       
       figcaption{
@@ -165,7 +185,9 @@ Now the main attraction of Muynak city is the ship graveyard and, due to climate
         </article>
 
         <!--  graphic container  -->
-        <figure>
+        <div class="frame"><figure>
+          
+          
           <p>0</p>
           <!--   actual graphic/chart   -->
           <img
@@ -173,7 +195,7 @@ Now the main attraction of Muynak city is the ship graveyard and, due to climate
             width="100%"
           />
           <figcaption>Photographer: Jared Paisley</figcaption>
-        </figure>
+        </figure></div>
       </section>
 
       <section id="outro"></section>
