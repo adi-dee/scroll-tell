@@ -156,7 +156,7 @@
 
               <p>This is Ali Shaddinov</p>
             </div>
-            <div class="step" data-step="2">
+            <div class="step" data-step="2" data-value="https://cdn.glitch.global/a1ac19ef-690e-447b-a7af-90ae67561b11/wwf_water_risk_map.jpeg?v=1658824838379" data-text="Source: WWF Water risk map" data-attribute="src" data-target="imgObj">
               <p>
                 Ali Shaddinov is a fisherman from Muynak, Uzbekistan. He was born in 1951 and he has lived in Muynak since he was three
                 years old. 
@@ -197,9 +197,9 @@ Now the main attraction of Muynak city is the ship graveyard and, due to climate
           <!--   actual graphic/chart   -->
           <img
             src="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/old_man_aral_sea.jpg?v=1659343046114"
-            width="100%"
+            width="100%" id="imgObj"
           />
-          <figcaption>Photographer: Jared Paisley</figcaption></div>
+          <figcaption id="captionObj">Photographer: Jared Paisley</figcaption></div>
         </figure>
       </section>
       
@@ -253,6 +253,16 @@ Now the main attraction of Muynak city is the ship graveyard and, due to climate
 
         // update graphic based on step
         figure.select("p").text(response.index + 1);
+        
+         document.getElementById(response.element.dataset.target).setAttribute(response.element.dataset.attribute, response.element.dataset.value);
+  if  (response.element.dataset.target== "imgObj"){
+    let alt = response.element.dataset.text
+    if( alt )
+      {
+      caption.innerText = alt;
+      }
+    }
+			});
       }
 
       function setupStickyfill() {
