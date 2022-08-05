@@ -152,11 +152,11 @@
         <article>
           <!--  step/text container  -->
           <div class="scroll__text">
-            <div class="step" data-step="Kenya" data-value="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/Running%20for%20Water.png?v=1659700194466" data-text="Source: WWF Water risk map" data-attribute="src" data-target="imgObj">
+            <div class="step" data-step="1" data-value="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/running_398_410.png?v=1659701345317" data-text="Runblue Africa" data-attribute="src" data-target="imgObj">
 
               <p>This is Ali Shaddinov</p>
             </div>
-            <div class="step" data-step="Tanzania"  data-value="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/Running%20for%20Water.png?v=1659700194466" data-text="Source: WWF Water risk map" data-attribute="src" data-target="imgObj">
+            <div class="step" data-step="Tanzania"  data-value="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/kenya.png?v=1659701772361" data-text="Runblue Kenya" data-attribute="src" data-target="imgObj">
               <p>
                 Ali Shaddinov is a fisherman from Muynak, Uzbekistan. He was born in 1951 and he has lived in Muynak since he was three
                 years old. 
@@ -199,7 +199,7 @@ Now the main attraction of Muynak city is the ship graveyard and, due to climate
             src="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/Running%20for%20Water.png?v=1659700194466"
             width="100%" id="imgObj"
           />
-          <figcaption>Photographer: Jared Paisley</figcaption></div>
+          <figcaption id="captionObj">Photographer: Jared Paisley</figcaption></div>
         </figure>
       </section>
       
@@ -220,6 +220,7 @@ Now the main attraction of Muynak city is the ship graveyard and, due to climate
       var figure = scrolly.select("figure");
       var article = scrolly.select("article");
       var step = article.selectAll(".step");
+      const caption = document.getElementById("captionObj");
 
       // initialize the scrollama
       var scroller = scrollama();
@@ -255,6 +256,13 @@ Now the main attraction of Muynak city is the ship graveyard and, due to climate
         figure.select("p").text(response.index + 1);
         
               document.getElementById(response.element.dataset.target).setAttribute(response.element.dataset.attribute, response.element.dataset.value);
+          if  (response.element.dataset.target== "imgObj"){
+    let alt = response.element.dataset.text
+    if( alt )
+      {
+      caption.innerText = alt;
+      }
+    }
       }
 
       function setupStickyfill() {
