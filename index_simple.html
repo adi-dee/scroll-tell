@@ -226,10 +226,10 @@
             <p>0</p>
             <!--   actual graphic/chart   -->
             <img
-              src="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/ship_graveyard.png?v=1659377819289"
+              src="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/ship_graveyard.png?v=1659377819289" id="imgObj"
               width="100%"
             />
-            <figcaption>Ship Graveyard, Muynak, Uzbekistan </figcaption>
+            <figcaption id="captionObj">Ship Graveyard, Muynak, Uzbekistan </figcaption>
           </div>
         </figure>
 
@@ -288,28 +288,23 @@
             data-step="6"
             style="height: 504px"
             data-scrollama-index="5"
+                data-value="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/aerial_aral.jpg?v=1659384031109"
+            data-text="Aerial view - Rotting ships in the dried-up Aral Sea,
+Uzbekistan"
+            data-attribute="src"
+            data-target="imgObj"
           >
 <p>Mina Guli ran across the dried bed of the Aral Sea for Marathon 28.</p></div>
-        </article>
-      </section>
-      <section class="scrolly">
-      <figure style="height: 336.5px; top: 168.25px">
-          <div class="frame">
-            <p>0</p>
-            <!--   actual graphic/chart   -->
-            <img
-              src="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/aerial_aral.jpg?v=1659384031109"
-              width="100%"
-            />
-            <figcaption>Aerial view - Rotting ships in the dried-up Aral Sea,
-Uzbekistan </figcaption>
-          </div>
-        </figure> <article><div
+      <div
             class="step"
             data-step="7"
             style="height: 504px"
             data-scrollama-index="6"
-            data-image=""
+            data-value="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/aerial_aral.jpg?v=1659384031109"
+            data-text="Aerial view - Rotting ships in the dried-up Aral Sea,
+Uzbekistan"
+            data-attribute="src"
+            data-target="imgObj"
           >
             <p>
               Thirst Foundation founder and CEO, water advocate, adventurer and athlete,
@@ -343,7 +338,7 @@ turned into a desert. The local economy has evaporated along with the water.
       </section>
 
       <section id="outro"> 
-       <div class="caption"><div class="flourish-embed flourish-map" data-src="visualisation/10806502"><script src="https://public.flourish.studio/resources/embed.js"></script></div><p>
+       <div class="caption"><p>
         Follow Mina on the African leg of her journey.
           </p></div><div class="frame">
      
@@ -367,6 +362,7 @@ turned into a desert. The local economy has evaporated along with the water.
       var figure = scrolly.selectAll("figure");
       var article = scrolly.selectAll("article");
       var step = article.selectAll(".step");
+      const caption = document.getElementById("captionObj");
 
       // initialize the scrollama
       var scroller = scrollama();
@@ -401,6 +397,19 @@ turned into a desert. The local economy has evaporated along with the water.
 
         // update graphic based on step
         figure.select("p").text(response.index + 1);
+      document
+          .getElementById(response.element.dataset.target)
+          .setAttribute(
+            response.element.dataset.attribute,
+            response.element.dataset.value
+          );
+        if (response.element.dataset.target == "imgObj") {
+          let alt = response.element.dataset.text;
+          if (alt) {
+            caption.innerText = alt;
+          }
+        }
+      
       }
 
       function init() {
