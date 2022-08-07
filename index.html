@@ -308,17 +308,17 @@ Uzbekistan </figcaption>
           </div>
         </figure> <article><div
             class="step"
-            data-step="1"
+            data-step="7"
             style="height: 504px"
             data-scrollama-index="0"
           >
             <p>
               Thirst Foundation founder and CEO, water advocate, adventurer and athlete,
 Mina Guli ran across the dried bed of the Aral Sea for Marathon 28.
-            </p>
+        </p></div>
         <div
             class="step"
-            data-step="2"
+            data-step="8"
             style="height: 504px"
             data-scrollama-index="0"
           >
@@ -327,10 +327,19 @@ Mina Guli ran across the dried bed of the Aral Sea for Marathon 28.
 bustling tourist destination.
             </p>
           </div>
-        
-
-Now the main attraction of Muynak city is the ship graveyard and, due to climate change, the city has
+  <div
+            class="step"
+            data-step="9"
+            style="height: 504px"
+            data-scrollama-index="0"
+          >
+            <p>
+             Now the main attraction of Muynak city is the ship graveyard and, due to climate change, the city has
 turned into a desert. The local economy has evaporated along with the water.
+            </p>
+          </div>      
+
+
         </article>
       </section>
 
@@ -478,9 +487,9 @@ turned into a desert. The local economy has evaporated along with the water.
     <script>
       // using d3 for convenience
       var main = d3.select("main");
-      var scrolly = main.select(".scrolly");
-      var figure = scrolly.select("figure");
-      var article = scrolly.select("article");
+      var scrolly = main.selectAll(".scrolly");
+      var figure = scrolly.selectAll("figure");
+      var article = scrolly.selectAll("article");
       var step = article.selectAll(".step");
 
       // initialize the scrollama
@@ -526,7 +535,7 @@ turned into a desert. The local economy has evaporated along with the water.
         // 3. bind scrollama event handlers (this can be chained like below)
         scroller
           .setup({
-            step: ".scrolly article .step",
+            step: ".step",
             offset: 0.33,
             debug: false,
           })
