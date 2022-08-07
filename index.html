@@ -70,14 +70,14 @@
         text-align: left;
         padding: 1rem;
         position: absolute;
-        top: 0%;
+        top: 50%;
         left: 50%;
         -moz-transform: translate(-50%, -50%);
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         font-size: 2rem;
         font-weight: 900;
-        color: rgba(0, 0, 0, 0);
+        color: rgba(255, 255, 255, 1);
       }
 
     .scrolly {
@@ -520,6 +520,7 @@ turned into a desert. The local economy has evaporated along with the water.
         // add color to current step only
         step.classed("is-active", function (d, i) {
           return i === response.index;
+      
         });
 
         // update graphic based on step
@@ -537,7 +538,7 @@ turned into a desert. The local economy has evaporated along with the water.
           .setup({
             step: ".step",
             offset: 0.33,
-            debug: false,
+            debug: true,
           })
           .onStepEnter(handleStepEnter);
       }
