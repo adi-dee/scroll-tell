@@ -3,18 +3,19 @@
 This is a basic intro to multimedia scrollytelling using media from environmental activist [Mina Guli's #runblue campaign](https://twitter.com/minaguli) to demonstrate a couple of scrollytelling techniques.
 ![MinaGuli](https://pbs.twimg.com/profile_banners/111631792/1659954268/1080x360)
 
-## Understand Scrollytelling
+## Step by step guide to Scrollytelling
 
 Before remixing this glitch project, work through the Bill Shander LinkedIn Tutorial, [Step by step guide to Scrollama](https://www.linkedin.com/learning/scrollytelling-creating-a-one-page-web-experience)
-Make sure you understand how the html dataset works.
+Work through the tutorial to make sure you understand exactly how the basic step interaction works and how the javascript interacts with the HTML elements on the page. 
+The html dataset will be very important for multimedia interactions, focus on this. 
+More complex animations are optional. You can come back to this later if you want to create more complex interactions e.g. progressive animations. (Optional)
 
-The Shander tutorial example uses a float layout, which is very limited for more complex multimedia designs but working through it will help you understand exactly how javascript interacts with the HTML elements on the page. 
-You can come back to it later if you want to create more complex interactions e.g. progressive animations. (Optional)
+The Shander tutorial example uses a float layout, which is very limited for more complex multimedia designs.
 
 # What's in this project?
 ← `README.md`: That's this file, work in progress
 
-## Example - add a flexbox layout, video and flourish charts to your HTML dataset interactions
+## Example 1 - multimedia with flexbox layout and HTML dataset 
 ← `flexbox.html`: That's this file, work in progress
 This example linked below shows you how to integrate a flexbox layout with various types of multimedia and the HTML dataset techniques explained in the Bill Shander LinkedIn tutorial to change images, graphs and videos.
 
@@ -35,22 +36,15 @@ A flexbox layout with image(figure) and text(article) laid out side by side (ada
   - Figcaptions (captions)  
 - Article section - For the scrollable article text/script (divided into steps)
 - Outro section - Concluding text and credits
-- Script - Various levels of Javascript
+- Script - Javascript to setup the scrollama
 
-After that try the sticky overlay example
-[Sticky image](https://video-scroller.glitch.me/index.html)
-
-
-
-
-
-
+## Example 2 - multimedia with sticky side layout and HTML dataset 
 ← `sticky_image.html`: Sticky side
 The sticky side image example
 [Sticky image](https://video-scroller.glitch.me/sticky_image.html)
 
 The example uses Goldenberg's Sticky Side template. The layout is more suitable for scrollable charts, infographics etc.
-Look through the code - to locate the following:
+Look through the code to locate the following:
 - Styles for layout - This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file.A flexbox layout with image and text laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template)
 - Intro section with title (hed), subtitle (dek) and background video
 - Figure section - images with captions
@@ -61,9 +55,13 @@ Look through the code - to locate the following:
 - Outro section - Concluding text and credits
 - Script - Various levels of Javascript
 
-← `index.html`: Sticky overlay
+## Example 3 - multimedia with sticky overlay and HTML dataset 
+← `index.html`: Sticky overlay example 
+After that try the sticky overlay example
+[Sticky image](https://video-scroller.glitch.me/index.html)
+
 The example uses Goldenberg's Sticky Overlay template to implement scrolling interactions with video and images.
-Look through the code - to locate the following:
+Look through the code to locate the following:
 - Styles for layout - This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file.A flexbox layout with image and text laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template)
 - Intro section with title (hed), subtitle (dek) and background video
 - Figure section - images with captions
@@ -76,12 +74,15 @@ Look through the code - to locate the following:
 
 ## Javascript
 This exercise is intended to allow you to focus on storytelling but you will need to make some simple javascript edits in addition to customising the HTML content, media assets and CSS. 
+I recommend you use the Example 2 or 3, which have better functionality to handle resizing of the window - handleResize()
+
 Depending on the level of changes you want to make to the functionality, you can edit the Javascript in the file:
 ### Add your own images and captions 
 - You can swop in your own images and captions without changing the Javascript - check the code to see how the HTML dataset is set up for differnt types of media.
 ### Add simple functionality to step enter
 - handleStepEnter() function - To add functionality (e.g. provide captions for media other than images) you will need to edit the javascript here 
 ### More complex functionality (optional)
+- handleResize() function - handles resizing of display window
 - Scrollama - Fading steps in and out and to handle resizing of the display window.
 - Scrollama setup() - here you can change details of how steps function. 
 Useful for debugging - Display lines help you debug scrolling and other usability issues. Set debug="false" to get rid of the guidelines.
