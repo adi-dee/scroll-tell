@@ -9,22 +9,25 @@ This is a basic intro to multimedia scrollytelling using media from environmenta
 
 ← `index.html`:
 The example uses Goldenberg's Sticky Overlay tutorial to implement scrolling interactions with video and images.
-Look through the code - you should find examples of the following:
-- A background video
-- Figure section - For figures (featured images) with captions 
+Look through the code - to locate the following:
+- Styles for layout - This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file.A flexbox layout with image and text laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template)
+- Intro section with title (hed), subtitle (dek) and background video
+- Figure section - images with captions
+  - Figures (featured images) with 
+  - Figcaptions (captions) 
+  - Paragraph elements - numbers superimposed on the images for debugging purposes. 
 - Article section - For the scrollable script (divided into steps)
-
-- Styles for layout
-This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file.A flexbox layout with image and text laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template)
-- Various levels of Javascript
+- Outro section - Concluding text and credits
+- Script - Various levels of Javascript
 
 ## Javascript
-This exercise should allow you to focus on storytelling but depending on the level of changes you want to make to the functionality, you can edit the Javascript in the file:
+This exercise is intended to allow you to focus on storytelling. 
+Depending on the level of changes you want to make to the functionality, you can edit the Javascript in the file:
 ### Add your own images and captions 
 - You can swop in your own images and captions without changing the Javascript - check the code to see how the HTML dataset is set up for differnt types of media.
-### 2
+### Add simple functionality to step enter
 - handleStepEnter() function - To add functionality (e.g. provide captions for media other than images) you will need to edit the javascript here 
-### 3 
+### More complex functionality (optional)
 - Scrollama - Fading steps in and out and to handle resizing of the display window.
 - Scrollama setup() - here you can change details of how steps function. 
 Useful for debugging - Display lines help you debug scrolling and other usability issues. Set debug="false" to get rid of the guidelines.
@@ -32,6 +35,8 @@ Useful for debugging - Display lines help you debug scrolling and other usabilit
 You can see this layout in combination with other techniques you've been taught in this more complex example.
 
 ← `style.css`: Basic styles (mostly typography and media queries)
+
+← `d3.min.js`:  
 
 ← `scrollama.min.js`: Scrollama library - You don't need to edit this - basic scrollytelling functionality is here
 
@@ -51,3 +56,4 @@ Bill Shander LinkedIn Tutorial - [Step by step guide to Scrollama](https://www.l
 
 This will help you understand exactly how javascript interacts with the HTML elements on the page.
 
+[Mapbox example](https://glitch.com/~stellenbosch-heritage-tree-storymap) - For more complex map interactions
