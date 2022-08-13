@@ -23,15 +23,19 @@ Look through the code to locate the following:
 - Styles for layout - This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file. 
 A flexbox layout with image(figure) and text(article) laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template)
 - Intro section with title (hed), subtitle (dek) and background video
-- Figure section - images with captions
-  - Figures (featured images) with 
-  - Figcaptions (captions) 
-  - Paragraph elements - numbers superimposed on the images (for debugging purposes). 
+- Three scrollable sections "scrolly"
+  - Each section has both a figure section and an article section
+  - Each section includes a different type of object in the figure
+    - images
+    - svgs
+    - iframes (for flourish charts)
+    - video
+- Figure section - images with captions 
+  - Figures (featured images, svgs, iframes or videos) with "sticky" positioning applied
+  - Figcaptions (captions)  
 - Article section - For the scrollable article text/script (divided into steps)
 - Outro section - Concluding text and credits
 - Script - Various levels of Javascript
-
-
 
 After that try the sticky overlay example
 [Sticky image](https://video-scroller.glitch.me/index.html)
