@@ -3,12 +3,37 @@
 This is a basic intro to multimedia scrollytelling using media from environmental activist [Mina Guli's #runblue campaign](https://twitter.com/minaguli) to demonstrate a couple of scrollytelling techniques.
 ![MinaGuli](https://pbs.twimg.com/profile_banners/111631792/1659954268/1080x360)
 
+Start with the basic Bill Shander LinkedIn Tutorial - [Step by step guide to Scrollama](https://www.linkedin.com/learning/scrollytelling-creating-a-one-page-web-experience)
+This uses a 
+This will help you understand exactly how javascript interacts with the HTML elements on the page.
+
+
+First work through the sticky side image example
+[Sticky image](https://video-scroller.glitch.me/sticky_image.html)
+
+After that try the sticky overlay example
+[Sticky image](https://video-scroller.glitch.me/index.html)
+
+
 ## What's in this project?
 
 ← `README.md`: That's this file, work in progress
 
-← `index.html`:
-The example uses Goldenberg's Sticky Overlay tutorial to implement scrolling interactions with video and images.
+← `sticky_image.html`: Sticky side - start here
+The example uses Goldenberg's Sticky Side template. The layout is more suitable for scrollable charts, infographics etc.
+Look through the code - to locate the following:
+- Styles for layout - This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file.A flexbox layout with image and text laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template)
+- Intro section with title (hed), subtitle (dek) and background video
+- Figure section - images with captions
+  - Figures (featured images) with 
+  - Figcaptions (captions) 
+  - Paragraph elements - numbers superimposed on the images (for debugging purposes). 
+- Article section - For the scrollable article text/script (divided into steps)
+- Outro section - Concluding text and credits
+- Script - Various levels of Javascript
+
+← `index.html`: Sticky overlay
+The example uses Goldenberg's Sticky Overlay template to implement scrolling interactions with video and images.
 Look through the code - to locate the following:
 - Styles for layout - This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file.A flexbox layout with image and text laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template)
 - Intro section with title (hed), subtitle (dek) and background video
@@ -16,12 +41,12 @@ Look through the code - to locate the following:
   - Figures (featured images) with 
   - Figcaptions (captions) 
   - Paragraph elements - numbers superimposed on the images for debugging purposes. 
-- Article section - For the scrollable script (divided into steps)
+- Article section - For the scrollable article text/script (divided into steps)
 - Outro section - Concluding text and credits
 - Script - Various levels of Javascript
 
 ## Javascript
-This exercise is intended to allow you to focus on storytelling. 
+This exercise is intended to allow you to focus on storytelling but you will need to make some simple javascript edits in addition to customising the HTML content, media assets and CSS. 
 Depending on the level of changes you want to make to the functionality, you can edit the Javascript in the file:
 ### Add your own images and captions 
 - You can swop in your own images and captions without changing the Javascript - check the code to see how the HTML dataset is set up for differnt types of media.
@@ -36,13 +61,13 @@ You can see this layout in combination with other techniques you've been taught 
 
 ← `style.css`: Basic styles (mostly typography and media queries)
 
-← `d3.min.js`:  
+← `d3.min.js`: D3 library used for  
 
 ← `scrollama.min.js`: Scrollama library - You don't need to edit this - basic scrollytelling functionality is here
 
 ## Links
 
-The examples adapt these templates for use with images and video.
+The examples adapt the templates and tutorials below for multimedia storytelling.
 
 Russel Goldenberg 
 - [Introducing Scrollama](https://pudding.cool/process/introducing-scrollama/) 
