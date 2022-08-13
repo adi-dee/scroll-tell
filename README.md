@@ -3,9 +3,18 @@
 This is a basic intro to multimedia scrollytelling using media from environmental activist [Mina Guli's #runblue campaign](https://twitter.com/minaguli) to demonstrate a couple of scrollytelling techniques.
 ![MinaGuli](https://pbs.twimg.com/profile_banners/111631792/1659954268/1080x360)
 
-Start with the basic Bill Shander LinkedIn Tutorial - [Step by step guide to Scrollama](https://www.linkedin.com/learning/scrollytelling-creating-a-one-page-web-experience)
-This uses a 
-This will help you understand exactly how javascript interacts with the HTML elements on the page.
+## Understand Scrollytelling
+
+Before remixing this glitch project, start with the Bill Shander LinkedIn Tutorial, [Step by step guide to Scrollama](https://www.linkedin.com/learning/scrollytelling-creating-a-one-page-web-experience)
+The tutorial example uses a float layout, which is very limited for more complex multimedia designs but working through it will help you understand exactly how javascript interacts with the HTML elements on the page. 
+You can come back to it later if you want to create more complex interactions e.g. progressive animations. (Optional)
+ 
+## Add a flexbox
+This example linked below shows you how to use the HTML dataset techniques explained in the Bill Shander LinkedIn tutorial to change images, graphs and videos.
+
+Note - uses a flexbox layout instead of float (as in the tutorial).
+Basic scrollama
+https://scrollytelling-tutorial.glitch.me/basic/
 
 
 First work through the sticky side image example
