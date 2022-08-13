@@ -1,7 +1,6 @@
 # Video Scroller
 
 This is a basic intro to multimedia scrollytelling using media from environmental activist [Mina Guli's #runblue campaign](https://twitter.com/minaguli) to demonstrate a couple of scrollytelling techniques.
-![MinaGuli](https://pbs.twimg.com/profile_banners/111631792/1659954268/1080x360)
 
 ## Step by step guide to Scrollytelling
 
@@ -22,7 +21,9 @@ The Shander tutorial example uses a float layout, which is very limited for more
 
 ← `flexbox.html`: Simple multimedia scrolling, flexbox layout.
 
-This example linked below shows you how to integrate a flexbox layout with various types of multimedia and the HTML dataset techniques explained in the Bill Shander LinkedIn tutorial to change images, graphs and videos.
+This example linked below shows you how to 
+- integrate a flexbox layout with various types of multimedia and 
+- swop media using the HTML dataset techniques explained in the Bill Shander LinkedIn tutorial to change images, graphs and videos.
 
 (Flexbox scrollama](https://scrollytelling-tutorial.glitch.me/basic/)
 
