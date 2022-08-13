@@ -9,7 +9,7 @@ This is a basic intro to multimedia scrollytelling using media from environmenta
 
 ← `index.html`:
 The example uses Goldenberg's Sticky Overlay tutorial to implement scrolling interactions with video and images.
-
+Look through the code - you should find examples of the following:
 - A background video
 
 - Styles for layout
@@ -34,13 +34,15 @@ You can see this layout in combination with other techniques you've been taught 
 
 The examples adapt these templates for use with images and video.
 
-Russel Goldenberg [Introducing Scrollama](https://pudding.cool/process/introducing-scrollama/) and for the more advanced projects [Responsive Scrollytelling](https://pudding.cool/process/responsive-scrollytelling/)
-
+Russel Goldenberg 
+- [Introducing Scrollama](https://pudding.cool/process/introducing-scrollama/) 
+- [Responsive Scrollytelling](https://pudding.cool/process/responsive-scrollytelling/)
+ For more advanced projects and for those writing papers about scrollytelling and user experience 
 [Sticky side template](https://russellgoldenberg.github.io/scrollama/sticky-side/) (captions scroll without obscuring image)
 
 [Overlay template](https://russellgoldenberg.github.io/scrollama/sticky-overlay/) (captions scroll as overlay on sticky graphic)
 
-Bill Shander LinkedIn Tutorial - Step by step guide to Scrollama
+Bill Shander LinkedIn Tutorial - [Step by step guide to Scrollama](https://www.linkedin.com/learning/scrollytelling-creating-a-one-page-web-experience)
 
 This will help you understand exactly how javascript interacts with the HTML elements on the page.
 
