@@ -11,19 +11,23 @@ This is a basic intro to multimedia scrollytelling using media from environmenta
 The example uses Goldenberg's Sticky Overlay tutorial to implement scrolling interactions with video and images.
 Look through the code - you should find examples of the following:
 - A background video
+- Figure section - For figures (featured images) with captions 
+- Article section - For the scrollable script (divided into steps)
 
 - Styles for layout
 This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file.A flexbox layout with image and text laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template)
+- Various levels of Javascript
 
-- Javascript  
-Depending on the level of changes you can edit the Javascript in the file :
-### Level 1 
-- Swop in your own images and captions using the HTML dataset
-### Level 2
-- Scrollama - To add captions to other media you will need to edit the javascript(to swop images and captions) as explained in a Bill Shander LinkedIn tutorial on Scrollytelling
-### Step 2 
+## Javascript
+This exercise should allow you to focus on storytelling but depending on the level of changes you want to make to the functionality, you can edit the Javascript in the file:
+### Add your own images and captions 
+- You can swop in your own images and captions without changing the Javascript - check the code to see how the HTML dataset is set up for differnt types of media.
+### 2
+- handleStepEnter() function - To add functionality (e.g. provide captions for media other than images) you will need to edit the javascript here 
+### 3 
 - Scrollama - Fading steps in and out and to handle resizing of the display window.
-- Scrollama debugging - Display lines help you debug scrolling and other usability issues. Set debug="false" to get rid of the guidelines.
+- Scrollama setup() - here you can change details of how steps function. 
+Useful for debugging - Display lines help you debug scrolling and other usability issues. Set debug="false" to get rid of the guidelines.
 
 You can see this layout in combination with other techniques you've been taught in this more complex example.
 
