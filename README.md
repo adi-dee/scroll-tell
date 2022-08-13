@@ -34,7 +34,7 @@ You can see this layout in combination with other techniques you've been taught 
 
 The examples adapt these templates for use with images and video.
 
-Russel Goldenberg [Introducing Scrollama](https://pudding.cool/process/introducing-scrollama/)  [Responsive Scrollytelling]
+Russel Goldenberg [Introducing Scrollama](https://pudding.cool/process/introducing-scrollama/) and for the more advanced projects [Responsive Scrollytelling](https://pudding.cool/process/responsive-scrollytelling/)
 
 [Sticky side template](https://russellgoldenberg.github.io/scrollama/sticky-side/) (captions scroll without obscuring image)
 
