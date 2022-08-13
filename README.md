@@ -13,16 +13,17 @@ Look through the code - you should find examples of the following:
 - A background video
 
 - Styles for layout
-This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file.
-
-- A flexbox layout with image and text laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template)
+This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file.A flexbox layout with image and text laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template)
 
 - Javascript  
-The Javascript in the file combines several techniques:
-
-- Scrollama - HTML dataset techniques (to swop images and captions) as explained in a Bill Shander LinkedIn tutorial on Scrollytelling
+Depending on the level of changes you can edit the Javascript in the file :
+### Level 1 
+- Swop in your own images and captions using the HTML dataset
+### Level 2
+- Scrollama - To add captions to other media you will need to edit the javascript(to swop images and captions) as explained in a Bill Shander LinkedIn tutorial on Scrollytelling
+### Step 2 
 - Scrollama - Fading steps in and out and to handle resizing of the display window.
-- Scrollama The example has lines to help you debug scrolling and other usability issues. Set debug="false" to get rid of the guidelines.
+- Scrollama debugging - Display lines help you debug scrolling and other usability issues. Set debug="false" to get rid of the guidelines.
 
 You can see this layout in combination with other techniques you've been taught in this more complex example.
 
