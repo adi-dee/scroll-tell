@@ -13,6 +13,11 @@ More complex animations are optional. You can come back to this later if you wan
 
 The Shander tutorial example uses a float layout, which is very limited for more complex multimedia designs.
 
+# Caveat
+These examples are designed to introduce some multimedia scrolling techniques to media students.
+These are not always suitable for responsive sites. 
+You will be investigating this issue for your assignment.
+
 # What's in this project?
 
 ← `README.md`: That's this file, work in progress
@@ -86,7 +91,8 @@ Look through the code to locate the following:
 
 ## Javascript
 
-This exercise is intended to allow you to focus on storytelling but you will need to make some simple javascript edits in addition to customising the HTML content, media assets and CSS.
+This exercise is intended to allow you to focus on multimedia storytelling and some simple scrolling interactions. 
+You will need to make some simple javascript edits in addition to customising the HTML content, media assets and CSS.
 I recommend you use the Example 2 or 3, which have better functionality to handle resizing of the window - handleResize()
 
 Depending on the level of changes you want to make to the functionality, you can edit the Javascript in the file:
