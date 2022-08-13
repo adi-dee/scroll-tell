@@ -5,30 +5,46 @@ This is a basic intro to multimedia scrollytelling using media from environmenta
 
 ## Understand Scrollytelling
 
-Before remixing this glitch project, start with the Bill Shander LinkedIn Tutorial, [Step by step guide to Scrollama](https://www.linkedin.com/learning/scrollytelling-creating-a-one-page-web-experience)
-The tutorial example uses a float layout, which is very limited for more complex multimedia designs but working through it will help you understand exactly how javascript interacts with the HTML elements on the page. 
+Before remixing this glitch project, work through the Bill Shander LinkedIn Tutorial, [Step by step guide to Scrollama](https://www.linkedin.com/learning/scrollytelling-creating-a-one-page-web-experience)
+Make sure you understand how the html dataset works.
+
+The Shander tutorial example uses a float layout, which is very limited for more complex multimedia designs but working through it will help you understand exactly how javascript interacts with the HTML elements on the page. 
 You can come back to it later if you want to create more complex interactions e.g. progressive animations. (Optional)
- 
-## Add a flexbox
-This example linked below shows you how to use the HTML dataset techniques explained in the Bill Shander LinkedIn tutorial to change images, graphs and videos.
 
-Note - uses a flexbox layout instead of float (as in the tutorial).
-Basic scrollama
-https://scrollytelling-tutorial.glitch.me/basic/
+# What's in this project?
+← `README.md`: That's this file, work in progress
+
+## Example - add a flexbox layout, video and flourish charts to your HTML dataset interactions
+← `flexbox.html`: That's this file, work in progress
+This example linked below shows you how to integrate a flexbox layout with various types of multimedia and the HTML dataset techniques explained in the Bill Shander LinkedIn tutorial to change images, graphs and videos.
+
+(Flexbox scrollama](https://scrollytelling-tutorial.glitch.me/basic/)
+Look through the code to locate the following:
+- Styles for layout - This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file. 
+A flexbox layout with image(figure) and text(article) laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template)
+- Intro section with title (hed), subtitle (dek) and background video
+- Figure section - images with captions
+  - Figures (featured images) with 
+  - Figcaptions (captions) 
+  - Paragraph elements - numbers superimposed on the images (for debugging purposes). 
+- Article section - For the scrollable article text/script (divided into steps)
+- Outro section - Concluding text and credits
+- Script - Various levels of Javascript
 
 
-First work through the sticky side image example
-[Sticky image](https://video-scroller.glitch.me/sticky_image.html)
 
 After that try the sticky overlay example
 [Sticky image](https://video-scroller.glitch.me/index.html)
 
 
-## What's in this project?
 
-← `README.md`: That's this file, work in progress
 
-← `sticky_image.html`: Sticky side - start here
+
+
+← `sticky_image.html`: Sticky side
+The sticky side image example
+[Sticky image](https://video-scroller.glitch.me/sticky_image.html)
+
 The example uses Goldenberg's Sticky Side template. The layout is more suitable for scrollable charts, infographics etc.
 Look through the code - to locate the following:
 - Styles for layout - This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file.A flexbox layout with image and text laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template)
