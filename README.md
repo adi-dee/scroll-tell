@@ -14,8 +14,9 @@ More complex animations are optional. You can come back to this later if you wan
 The Shander tutorial example uses a float layout, which is very limited for more complex multimedia designs.
 
 # Caveat
+
 These examples are designed to introduce some multimedia scrolling techniques to media students.
-These are not always suitable for responsive sites. 
+These are not always suitable for responsive sites.
 You will be investigating this issue for your reflection paper in the final assignment.
 
 # What's in this project?
@@ -26,15 +27,16 @@ You will be investigating this issue for your reflection paper in the final assi
 
 ← `flexbox.html`: Simple multimedia scrolling, flexbox layout.
 
-This example linked below shows you how to 
-- integrate a flexbox layout with various types of multimedia and 
+This example linked below shows you how to
+
+- integrate a flexbox layout with various types of multimedia and
 - swop media using the HTML dataset techniques explained in the Bill Shander LinkedIn tutorial to change images, graphs and videos.
 
 (Flexbox scrollama](https://scrollytelling-tutorial.glitch.me/basic/)
 
 Look through the code to locate the following:
 
-- Styles for layout - This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file. This first example gives you a flexbox layout with image(figure) and variable length text(article). Figure and article are laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template). 
+- Styles for layout - This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file. This first example gives you a flexbox layout with image(figure) and variable length text(article). Figure and article are laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template).
 - Intro section with title (hed), subtitle (dek) and background video
 - Three scrollable sections "scrolly"
   - Each section has both a figure section and an article section
@@ -49,6 +51,31 @@ Look through the code to locate the following:
 - Article section - For the scrollable article text/script (divided into steps)
 - Outro section - Concluding text and credits
 - Script - Javascript to setup the scrollama
+
+```
+<script type="text/javascript">
+  const scroller = scrollama();
+  const caption = document.getElementById("captionObj");
+  scroller
+  .setup({
+			step: ".step",
+      offset: 0.2,
+			})
+			.onStepEnter((response) => {
+				console.log(response);
+           document.getElementById(response.element.dataset.target).setAttribute(response.element.dataset.attribute,    response.element.dataset.value);
+  if  (response.element.dataset.target== "imgObj"){
+    let alt = response.element.dataset.text
+    if( alt )
+      {
+      caption.innerText = alt;
+      }
+    }
+			});
+
+		window.addEventListener("resize", scroller.resize);
+	</script>
+```
 
 ## Example 2 - multimedia with sticky side layout and HTML dataset
 
@@ -90,7 +117,7 @@ Look through the code to locate the following:
 
 ## Javascript
 
-This exercise is intended to allow you to focus on multimedia storytelling and some simple scrolling interactions. 
+This exercise is intended to allow you to focus on multimedia storytelling and some simple scrolling interactions.
 You will need to make some simple javascript edits in addition to customising the HTML content, media assets and CSS.
 I recommend you use the Example 2 or 3, which have better functionality to handle resizing of the window - handleResize()
 
