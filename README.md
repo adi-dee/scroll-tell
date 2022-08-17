@@ -16,7 +16,7 @@ The Shander tutorial example uses a float layout, which is very limited for more
 # Caveat
 These examples are designed to introduce some multimedia scrolling techniques to media students.
 These are not always suitable for responsive sites. 
-You will be investigating this issue for your assignment.
+You will be investigating this issue for your reflection paper in the final assignment.
 
 # What's in this project?
 
@@ -34,8 +34,7 @@ This example linked below shows you how to
 
 Look through the code to locate the following:
 
-- Styles for layout - This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file.
-  A flexbox layout with image(figure) and text(article) laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template)
+- Styles for layout - This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file. This first example gives you a flexbox layout with image(figure) and variable length text(article). Figure and article are laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template). 
 - Intro section with title (hed), subtitle (dek) and background video
 - Three scrollable sections "scrolly"
   - Each section has both a figure section and an article section
@@ -57,10 +56,10 @@ Look through the code to locate the following:
 The sticky side image example
 [Sticky image](https://video-scroller.glitch.me/sticky_image.html)
 
-The example uses Goldenberg's Sticky Side template. The layout is more suitable for scrollable charts, infographics etc.
+The example uses Goldenberg's Sticky Side template. I would recommend this layout for scrollable charts, infographics etc.
 Look through the code to locate the following:
 
-- Styles for layout - This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file.A flexbox layout with image and text laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template)
+- Styles for layout - This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file. A flexbox layout with image and text laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template)
 - Intro section with title (hed), subtitle (dek) and background video
 - Figure section - images with captions
   - Figures (featured images) with
