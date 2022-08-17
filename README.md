@@ -38,9 +38,9 @@ Look through the code to locate the following:
 
 - Styles for layout - This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file. This first example gives you a flexbox layout with image(figure) and variable length text(article). Figure and article are laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template).
 - Intro section with title (hed), subtitle (dek) and background video
-- Three scrollable sections "scrolly"
+- Three separate scrollable sections ("scrolly")
   - Each section has both a figure section and an article section
-  - Each section includes a different type of object in the figure
+  - Each section demonstrates how you can use a different type of object in the figure
     - images
     - svgs
     - iframes (for flourish charts)
@@ -58,32 +58,32 @@ Look through the code to locate the following:
   const caption = document.getElementById("captionObj");
   scroller
   .setup({
-			step: ".step",
+      step: ".step",
       offset: 0.2,
-			})
-			.onStepEnter((response) => {
-				console.log(response);
-           document.getElementById(response.element.dataset.target).setAttribute(response.element.dataset.attribute,    response.element.dataset.value);
-  if  (response.element.dataset.target== "imgObj"){
-    let alt = response.element.dataset.text
-    if( alt )
-      {
-      caption.innerText = alt;
+  })
+  .onStepEnter((response) => {
+      console.log(response);
+      document.getElementById(response.element.dataset.target).setAttribute(response.element.dataset.attribute,    response.element.dataset.value);
+      if  (response.element.dataset.target== "imgObj"){
+        let alt = response.element.dataset.text
+        if( alt )
+          {
+          caption.innerText = alt;
+          }
       }
-    }
-			});
-
-		window.addEventListener("resize", scroller.resize);
-	</script>
+	});
+  window.addEventListener("resize", scroller.resize);
+</script>
 ```
 
 ## Example 2 - multimedia with sticky side layout and HTML dataset
 
-← `sticky_image.html`: Sticky side scrolling for charts, flexbox layout
+← `sticky_image.html`: Sticky side scrolling for charts and flexbox layout
+
 The sticky side image example
 [Sticky image](https://video-scroller.glitch.me/sticky_image.html)
 
-The example uses Goldenberg's Sticky Side template. I would recommend this layout for scrollable charts, infographics etc.
+The example uses Goldenberg's Sticky Side template. I would recommend this layout for scrollable charts, infographics etc where you need to be able to see the entire image.
 Look through the code to locate the following:
 
 - Styles for layout - This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file. A flexbox layout with image and text laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template)
@@ -99,6 +99,7 @@ Look through the code to locate the following:
 ## Example 3 - multimedia with sticky overlay and HTML dataset
 
 ← `index.html`: Sticky overlay scrolling for large photos, layout with absolute positioning and hardcoded step sizes  
+
 The sticky overlay example
 [Sticky image](https://video-scroller.glitch.me/index.html)
 
@@ -121,7 +122,8 @@ This exercise is intended to allow you to focus on multimedia storytelling and s
 You will need to make some simple javascript edits in addition to customising the HTML content, media assets and CSS.
 I recommend you use the Example 2 or 3, which have better functionality to handle resizing of the window - handleResize()
 
-Depending on the level of changes you want to make to the functionality, you can edit the Javascript in the file:
+Depending on the level of changes you want to make to the functionality, you can edit the Javascript in the file to swop in your own images, add functionality which triggers whenever the user enters a step.
+It's entirely optional to change more complex aspects of the Scrollama setup, how the browser handles a resize event or any more complex animations and fades.
 
 ### Add your own images and captions
 
@@ -131,9 +133,10 @@ Depending on the level of changes you want to make to the functionality, you can
 
 - handleStepEnter() function - To add functionality (e.g. provide captions for media other than images) you will need to edit the javascript here
 
-### More complex (optional)
+### More complex 
 
 - Scrollama setup() - here you can change details of how steps function or debug using the display lines. Set debug="false" to get rid of the guidelines.
+Optional:
 - handleReSize() function - handles resizing of display window
 - handleStepEnter() - Visual effects to fade steps in and out
 
@@ -141,13 +144,13 @@ You can see this layout in combination with other techniques you've been taught 
 
 ← `style.css`: Basic styles (mostly typography and media queries)
 
-← `d3.min.js`: D3 library used for
+← `d3.min.js`: D3 library - Don't edit this - used in template 
 
-← `scrollama.min.js`: Scrollama library - You don't need to edit this - basic scrollytelling functionality is here
+← `scrollama.min.js`: Scrollama library - Don't edit this - basic scrollytelling functionality is here
 
 ## Links
 
-The examples adapt the templates and tutorials below for multimedia storytelling.
+The examples are all based on the templates and tutorials linked here.
 
 Russel Goldenberg
 
