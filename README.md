@@ -137,18 +137,25 @@ It's entirely optional to change more complex aspects of the Scrollama setup, ho
 
 ### More complex 
 
-- Scrollama setup() - here you can change details of how steps function or debug using the display lines. For example, if you set debug="false" you can get rid of the guidelines, and offset changes where hand.
-Optional:
+- Scrollama setup() - here you can change details of how steps function or debug using the display lines. For example, if you set debug="false" you can get rid of the guidelines, and offset changes where handleStepEnter() is triggered.
+
+Optional extras:
 - handleReSize() function - handles resizing of display window
 - handleStepEnter() - Visual effects to fade steps in and out
 
-You can see this layout in combination with other techniques you've been taught e.g. scrollable background images and video.
+Rather than building an overly complex script, rather try out these basic layouts in combination with other techniques you've been taught e.g. scrollable background images and video.
 
-← `style.css`: Basic styles (mostly typography and media queries)
+## Javascript libraries
 
 ← `d3.min.js`: D3 library - Don't edit this - used in template 
 
 ← `scrollama.min.js`: Scrollama library - Don't edit this - basic scrollytelling functionality is here
+
+## External styles
+
+For ease of learning, most of the styles are in the HTML documents. There are a few in a separate stylesheet
+
+← `style.css`: Basic styles (mostly typography and media queries)
 
 ## Links
 
