@@ -32,7 +32,7 @@ This example linked below shows you how to
 - integrate a flexbox layout with various types of multimedia and
 - swop media using the HTML dataset techniques explained in the Bill Shander LinkedIn tutorial to change images, graphs and videos.
 
-(Flexbox scrollama](https://scrollytelling-tutorial.glitch.me/basic/)
+[Flexbox scrollama](https://scrollytelling-tutorial.glitch.me/basic/)
 
 Look through the code to locate the following:
 
@@ -80,7 +80,8 @@ Look through the code to locate the following:
 
 ← `sticky_image.html`: Sticky side scrolling for charts and flexbox layout
 
-The sticky side image example
+The sticky side image example:
+
 [Sticky image](https://video-scroller.glitch.me/sticky_image.html)
 
 The example uses Goldenberg's Sticky Side template. I would recommend this layout for scrollable charts, infographics etc where you need to be able to see the entire image.
@@ -100,8 +101,9 @@ Look through the code to locate the following:
 
 ← `index.html`: Sticky overlay scrolling for large photos, layout with absolute positioning and hardcoded step sizes  
 
-The sticky overlay example
-[Sticky image](https://video-scroller.glitch.me/index.html)
+The sticky overlay example:
+
+[Sticky overlay](https://video-scroller.glitch.me/index.html)
 
 The example uses Goldenberg's Sticky Overlay template to implement scrolling interactions with video and images.
 Look through the code to locate the following:
@@ -122,20 +124,20 @@ This exercise is intended to allow you to focus on multimedia storytelling and s
 You will need to make some simple javascript edits in addition to customising the HTML content, media assets and CSS.
 I recommend you use the Example 2 or 3, which have better functionality to handle resizing of the window - handleResize()
 
-Depending on the level of changes you want to make to the functionality, you can edit the Javascript in the file to swop in your own images, add functionality which triggers whenever the user enters a step.
+Depending on the level of changes you want to make to the functionality, you can edit the Javascript in the file to swop in your own images+captions and add functionality which triggers whenever the user enters a step.
 It's entirely optional to change more complex aspects of the Scrollama setup, how the browser handles a resize event or any more complex animations and fades.
 
 ### Add your own images and captions
 
-- You can swop in your own images and captions without changing the Javascript - check the code to see how the HTML dataset is set up for differnt types of media.
+- You can swop in your own images and captions without changing the Javascript - just change the HTML data. If you want to caption other types of media, first check the script carefully to see how the HTML dataset is set up for that specific media object.
 
-### Add simple functionality to step enter
+### Add simple functionality to handleStepEnter
 
-- handleStepEnter() function - To add functionality (e.g. provide captions for media other than images) you will need to edit the javascript here
+- handleStepEnter() function - To add functionality (e.g. provide captions for media other than images) you will need to edit the javascript here.
 
 ### More complex 
 
-- Scrollama setup() - here you can change details of how steps function or debug using the display lines. Set debug="false" to get rid of the guidelines.
+- Scrollama setup() - here you can change details of how steps function or debug using the display lines. For example, if you set debug="false" you can get rid of the guidelines, and offset changes where hand.
 Optional:
 - handleReSize() function - handles resizing of display window
 - handleStepEnter() - Visual effects to fade steps in and out
