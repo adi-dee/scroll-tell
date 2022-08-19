@@ -29,14 +29,18 @@ You will be investigating this issue for your reflection paper in the final assi
 
 This example linked below shows you how to
 
-- integrate a flexbox layout with various types of multimedia and
+- integrate a flexbox layout and sticky positioning of various types of multimedia
 - swop media using the HTML dataset techniques explained in the Bill Shander LinkedIn tutorial to change images, graphs and videos.
 
-[Flexbox scrollama](https://scrollytelling-tutorial.glitch.me/basic/)
+Here's an explanation of how CSS positionining with ```position:sticky``` makes this possible.
+
+[Easier scrollytelling with position sticky](https://pudding.cool/process/scrollytelling-sticky/)
+
+[Flexbox w basic scrollama](https://scrollytelling-tutorial.glitch.me/basic/)
 
 Look through the code to locate the following:
 
-- Styles for layout - This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file. This first example gives you a flexbox layout with image(figure) and variable length text(article). Figure and article are laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template).
+- Styles for layout - This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file. This first example gives you a flexbox layout with a sticky image(figure) and variable length text(article). Figure and article are laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template).
 - Intro section with title (hed), subtitle (dek) and background video
 - Three separate scrollable sections ("scrolly")
   - Each section has both a figure section and an article section
@@ -82,7 +86,7 @@ Look through the code to locate the following:
 
 The sticky side image example:
 
-[Sticky image](https://video-scroller.glitch.me/sticky_image.html)
+[Sticky side image layout](https://video-scroller.glitch.me/sticky_image.html)
 
 The example uses Goldenberg's Sticky Side template. I would recommend this layout for scrollable charts, infographics etc where you need to be able to see the entire image.
 Look through the code to locate the following:
@@ -103,7 +107,7 @@ Look through the code to locate the following:
 
 The sticky overlay example:
 
-[Sticky overlay](https://video-scroller.glitch.me/index.html)
+[Sticky overlay layout](https://video-scroller.glitch.me/index.html)
 
 The example uses Goldenberg's Sticky Overlay template to implement scrolling interactions with video and images.
 Look through the code to locate the following:
