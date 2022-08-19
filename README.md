@@ -9,11 +9,9 @@ Before remixing this glitch project, work through the Bill Shander LinkedIn Tuto
 You will want to understand exactly how the basic step interaction works and how the javascript interacts with the HTML elements on the page.
 The html dataset will be very important for multimedia interactions, later, so do focus on this.
 
-More complex animations are optional. You can come back to this later if you want to create more complex interactions e.g. progressive animations. (Optional)
+More complex animations are optional. You can come back to this later if you want to create more complex visual effects as the user scrolls e.g. progressive animations. (Optional)
 
-The Shander tutorial example uses a float layout, which is very limited for more complex multimedia designs.
-
-After you've understood the basics, you can use this [Scrollama reference](https://github.com/russellgoldenberg/scrollama#examples) 
+The Shander tutorial example uses a float layout, which is very limited for more complex multimedia designs. So the examples I've provided below all use layouts and techniques from Russel Goldenberg's templates. So it's after you've understood the basics by working through the Shander tutorial, you should move on to this [Scrollama reference](https://github.com/russellgoldenberg/scrollama#examples) 
 
 # Caveat
 
@@ -95,7 +93,7 @@ The sticky side image example:
 The example uses Goldenberg's Sticky Side template. I would recommend this layout for scrollable charts, infographics etc where you need to be able to see the entire image.
 Look through the code to locate the following:
 
-- Styles for layout - This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file. A flexbox layout with image and text laid out side by side (adapted from Goldenberg's Sticky Overlay tutorial template)
+- Styles for layout - This is a work in progress, and so I've included most of the styles needed to control layout of scrollytelling in the html file. It uses a flexbox layout with image and text laid out side by side (adapted from [Goldenberg's Sticky Side](https://russellgoldenberg.github.io/scrollama/sticky-side/) tutorial template)
 - Intro section with title (hed), subtitle (dek) and background video
 - Figure section - images with captions
   - Figures (featured images) with
@@ -104,7 +102,97 @@ Look through the code to locate the following:
 - Article section - For the scrollable article text/script (divided into steps)
 - Outro section - Concluding text and credits
 - Script - Various levels of Javascript
+```
+<script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="scrollama.min.js"></script>
+    <script>
+      // using d3 for convenience
+      var main = d3.select("main");
+      var scrolly = main.select("#scrolly");
+      var figure = scrolly.select("figure");
+      var article = scrolly.select("article");
+      var step = article.selectAll(".step");
+      const caption = document.getElementById("captionObj");
 
+      // initialize the scrollama
+      var scroller = scrollama();
+
+      // generic window resize listener event
+      function handleResize() {
+        // 1. update height of step elements
+        var stepH = Math.floor(window.innerHeight * 0.75);
+        step.style("height", stepH + "px");
+
+        var figureHeight = window.innerHeight / 2;
+        var figureMarginTop = (window.innerHeight - figureHeight) / 2;
+
+        figure
+          .style("height", figureHeight + "px")
+          .style("top", figureMarginTop + "px");
+
+        // 3. tell scrollama to update new element dimensions
+        scroller.resize();
+      }
+
+      // scrollama event handlers
+      function handleStepEnter(response) {
+        console.log(response);
+        // response = { element, direction, index }
+
+        // add color to current step only
+        step.classed("is-active", function (d, i) {
+          return i === response.index;
+        });
+
+        // update graphic based on step
+        figure.select("p").text(response.index + 1);
+
+        document
+          .getElementById(response.element.dataset.target)
+          .setAttribute(
+            response.element.dataset.attribute,
+            response.element.dataset.value
+          );
+        if (response.element.dataset.target == "imgObj") {
+          let alt = response.element.dataset.text;
+          if (alt) {
+            caption.innerText = alt;
+          }
+        }
+      }
+
+      function setupStickyfill() {
+        d3.selectAll(".sticky").each(function () {
+          Stickyfill.add(this);
+        });
+      }
+
+      function init() {
+        setupStickyfill();
+
+        // 1. force a resize on load to ensure proper dimensions are sent to scrollama
+        handleResize();
+
+        // 2. setup the scroller passing options
+        // 		this will also initialize trigger observations
+        // 3. bind scrollama event handlers (this can be chained like below)
+        scroller
+          .setup({
+            step: "#scrolly article .step",
+            offset: 0.33,
+            debug: false,
+          })
+          .onStepEnter(handleStepEnter);
+
+        // setup resize event
+        window.addEventListener("resize", handleResize);
+      }
+
+      // kick things off
+      init();
+    </script>
+```
 ## Example 3 - multimedia with sticky overlay and HTML dataset
 
 ← `index.html`: Sticky overlay scrolling for large photos, layout with absolute positioning and hardcoded step sizes  
