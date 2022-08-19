@@ -13,6 +13,8 @@ More complex animations are optional. You can come back to this later if you wan
 
 The Shander tutorial example uses a float layout, which is very limited for more complex multimedia designs.
 
+After you've understood the basics, you can use this [Scrollama reference](https://github.com/russellgoldenberg/scrollama#examples) 
+
 # Caveat
 
 These examples are designed to introduce some multimedia scrolling techniques to media students.
@@ -35,6 +37,8 @@ This example linked below shows you how to
 Here's an explanation of how CSS positionining with ```position:sticky``` makes this possible.
 
 [Easier scrollytelling with position sticky](https://pudding.cool/process/scrollytelling-sticky/)
+
+Here is the example:
 
 [Flexbox w basic scrollama](https://scrollytelling-tutorial.glitch.me/basic/)
 
