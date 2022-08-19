@@ -56,7 +56,7 @@ Look through the code to locate the following:
   - Figcaptions (captions)
 - Article section - For the scrollable article text/script (divided into steps)
 - Outro section - Concluding text and credits
-- Script - Javascript to setup the scrollama
+- Script - Javascript to setup the scrollama. In a nutshell, as the user scrolls, it uses html ```data-``` attributes stored in the article's steps to change the figure and the text of the caption.
 
 ```
 <script type="text/javascript">
@@ -69,7 +69,11 @@ Look through the code to locate the following:
   })
   .onStepEnter((response) => {
       console.log(response);
-      document.getElementById(response.element.dataset.target).setAttribute(response.element.dataset.attribute,    response.element.dataset.value);
+      document.getElementById(response.element.dataset.target)
+      .setAttribute(
+      response.element.dataset.attribute,    
+      response.element.dataset.value
+      );
       if  (response.element.dataset.target== "imgObj"){
         let alt = response.element.dataset.text
         if( alt )
@@ -101,7 +105,7 @@ Look through the code to locate the following:
   - Paragraph elements - numbers superimposed on the images (for debugging purposes).
 - Article section - For the scrollable article text/script (divided into steps)
 - Outro section - Concluding text and credits
-- Script - Various levels of Javascript
+- Script - Imports D3, Intersection-Observer and Scrollama libraries, and then implements the scrollama. Basically it's the same technique as Example 1 - uses html data- stored in the article's steps to update the image src and text of the caption.
 ```
 <script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
     <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
