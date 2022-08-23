@@ -1,6 +1,6 @@
 # Video Scroller
 
-This is a basic intro to multimedia scrollytelling using media from environmental activist [Mina Guli's #runblue campaign](https://twitter.com/minaguli) to demonstrate a couple of scrollytelling techniques.
+This is a basic intro to multimedia scrollytelling using media from environmental activist [Mina Guli's #runblue campaign](https://twitter.com/minaguli) to demonstrate a scrollytelling techniques to Javascript novices.
 
 ## Step by step guide to Scrollytelling
 
