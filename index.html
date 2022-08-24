@@ -1,176 +1,30 @@
 <!DOCTYPE html>
-<!-- saved from url=(0061)https://russellgoldenberg.github.io/scrollama/sticky-overlay/ -->
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>No Water No Life - Scrollable video example</title>
-    <meta name="description" content="No Water No Life - Scrollable video example with Scrollama Sticky Overlay" />
+    <title>Scrollytelling templates for Multimedia</title>
+    <meta name="description" content="Scrollytelling templates for Multimedia" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
-    <style>
-      body {
-         background-color: #000;
-      }
       
-      #intro {
-        max-width: 40rem;
-        margin: 1rem auto;
-        text-align: center;
-        margin-bottom: 320px;
-      }
-
-      .intro__hed {
-        font-size: 3rem;
-        margin: 2rem auto 0.5rem auto;
-      }
-
-      .intro__dek {
-        color: rgba(255, 255, 255, 0.55);
-      }
-        #outro {
-        max-width: 40rem;
-        margin: 1rem auto;
-        text-align: center;
-        margin-bottom: 320px;
-                  color: rgba(255, 255, 255, 0.7);
-      background-color: rgba(0, 0, 0, 0.3);
-      }
-      .outro__hed {
-        font-size: 2rem;
-        margin: 2rem auto 0.5rem auto;}
-      }
-      .outro__dek {
-        font-size: 1rem;
-         margin: 2rem auto 0.5rem auto;
-}
-
-      figcaption {
-        text-align: left;
-        padding: 0.5rem;
-        font-size: 0.8rem;
-        font-weight: 1;
-        color: rgba(255, 255, 255, 0.6);
-      }
-
-
-      figure {
-        position: -webkit-sticky;
-        position: sticky;
-        width: 100vw;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: 0;
-        -webkit-transform: translate3d(0, 0, 0);
-        -moz-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-        background-color: #8a8a8a;
-        z-index: 0;
-      }
-      
-
-      figure p {
-        text-align: left;
-        padding: 1rem;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -moz-transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        font-size: 2rem;
-        font-weight: 900;
-        color: rgba(255, 255, 255, 1);
-      }
-
-    .scrolly {
-        position: relative;
-        background-color: rgba(0, 0, 0, 0.9);
-        padding: 0;
-      }
-
-      article {
-        position: relative;
-        padding: 0;
-        max-width: 40rem;
-        margin: 0 auto;
-      }
-
-      
-      .step {
-        margin: 0 auto 2rem auto;
-        color: #fff;
-        background-color: rgba(0, 0, 0, 0.1);
-      }
-
-      .step:last-child {
-        margin-bottom: 50rem;
-      }
-
-      .step.is-active p {
-       background-color: rgba(0, 0, 0, 0.9);
-      }
-
-      .step p {
-        text-align: center;
-        padding: 1rem;
-        font-size: 1.5rem;
-        background-color: rgba(0, 0, 0, 0.1);
-      }
-
-      #background-video {
-        width: 100vw;
-        object-fit: cover;
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        z-index: -1;
-      }
-   
-  
-     </style>
   </head>
 
   <body>
-    <main>
-      <section id="intro">
-        <video
-          id="background-video"
-          autoplay
-          loop
-          muted
-          poster="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/ship_graveyard.png?v=1659377819289"
-        >
-          <source
-            src="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/aral_sea_07.mp4?v=1659381917939"
-            type="video/mp4"
-          />
-        </video>
-
-        <h1 class="intro__hed">No Water, No Life</h1>
-        <p class="intro__dek">
-          Take action on the world water crisis
-        </p>
-        
-      </section>
-      
-      
-      <section class="scrolly">
-        <figure style="height: 336.5px; top: 168.25px">
-          <div class="frame">
-            <p>0</p>
-            <!--   actual graphic/chart   -->
-            <img
-              src="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/mina_running.jpeg?v=1659890139451" id="imgObj"
+        <h1 class="intro__hed">Scrollytelling templates</h1>
+        <h2 class="intro__dek">
+         Adapted for Multimedia
+        </h2>
+    <p>
+This is a basic intro to multimedia scrollytelling using media from environmental activist Mina Guli's #runblue campaign to demonstrate scrollytelling techniques for use by Javascript novices.
+    </p>
+    <figure>
+          <img
+              src="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/mina_running.jpeg?v=1659890139451" 
               width="100%"
             />
-            <figcaption id="captionObj">Mina Guli is running 200 marathons to draw attention to the world water crisis. </figcaption>
-          </div>
+            <figcaption id="captionObj">Example 1 - Scrolling with basic flexbox. </figcaption>
         </figure>
 
         <article>
