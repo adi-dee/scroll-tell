@@ -9,24 +9,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
 <style>
-  p, figcaption{
+  h1{
+    color:#000;
+  }
+  p, h3{
     padding:1rem;
-    font-size:1rem;
+
+  }
+  
+  p,figcaption{
+        font-size:1rem;
+  }
+  
+  .container{
+    width:600px;
+    margin:auto;
+    
   }
     </style>      
   </head>
 
-  <body>
+  <body><div class="container">
+    
+
         <h1 class="intro__hed">Scrollytelling templates</h1>
         <h2 class="intro__dek">
          For Multimedia Storytelling
         </h2>
-
+    <p>Marion Walton, University of Cape Town</p>
     <h3>
       Overview
     </h3>
      <p>
-This is a basic intro to multimedia scrollytelling to demonstrate scrollytelling techniques for use by Javascript novices. Examples use media from environmental activist Mina Guli's #runblue campaign. 
+This is a basic intro to multimedia scrollytelling that demonstrates scrollytelling techniques for use by Javascript novices. Templates adapted from <a href="https://www.linkedin.com/learning/scrollytelling-creating-a-one-page-web-experience">Bill Shander's LinkedIn Tutorial</a>  and two of <a href="https://github.com/russellgoldenberg/scrollama#examples">Russel Goldenberg's templates.</a> Examples all use media from environmental activist Mina Guli's #runblue campaign. 
     </p>
          <p>
 The readme file provides a more detailed guide (currently somewhat under construction). 
@@ -40,35 +55,38 @@ The readme file provides a more detailed guide (currently somewhat under constru
       Example 1: Basic Flexbox
     </h3>
          
-    <figure>
+    <a href="flexbox.html"><figure>
           <img 
               src="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/basic_flexbox.png?v=1661329412275?v=1659890139451" 
               width="100%"
             />
-            <figcaption><a href="flexbox.html">Example 1 - Scrolling text alongside sticky content (image, svg, chart and video options). </a></figcaption>
-        </figure>
+            <figcaption>Example 1 - Scrolling text alongside sticky content (image, svg, chart and video options). </figcaption>
+        </figure></a>
    <h3>
       Example 2: Sticky Side Image
-    </h3>
+    </h3><a href="sticky_image.html">
     <figure>
           <img 
               src="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/sticky_image.png?v=1661329414083" 
               width="100%"
             />
-            <figcaption ><a href="sticky_image.html">Example 2 - Text scrolls past sticky image laid out to one side using flexbox. </a></figcaption>
-        </figure>
-     
+            <figcaption >Example 2 - Text scrolls past sticky image laid out to one side using flexbox. Background video. </figcaption>
+        </figure></a>
+        <h3>
+      Example 3: Sticky Image with Overlay
+    </h3><a href="sticky_overlay.html">
             <figure>
           <img 
               src="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/sticky_overlay.png?v=1661329415319" 
               width="100%"
             />
-            <figcaption ><a href="flexbox.html">Example 3 - Scrolling with text overlay on background image. </a></figcaption>
-        </figure> 
+            <figcaption >Example 3 - Scrolling text overlay over sticky background image. Background video. </figcaption>
+        </figure> </a>
          <div 
          >
         <p>
         Media Credits: Thirst Foundation
           </p></div>
+    
   </body>
 </html>
