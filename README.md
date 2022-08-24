@@ -1,6 +1,6 @@
 # Video Scroller
 
-This is a basic intro to multimedia scrollytelling using media from environmental activist [Mina Guli's #runblue campaign](https://twitter.com/minaguli) to demonstrate a scrollytelling techniques for use by Javascript novices.
+This is a basic intro to multimedia scrollytelling using media from environmental activist [Mina Guli's #runblue campaign](https://twitter.com/minaguli) to demonstrate scrollytelling techniques for use by Javascript novices.
 
 ## Step by step guide to Scrollytelling
 
@@ -198,12 +198,11 @@ Look through the code to locate the following:
     </script>
 ```
 ## Example 3 - multimedia with sticky overlay and HTML dataset
-
-← `index.html`: Sticky overlay scrolling for large photos, layout with absolute positioning and hardcoded step sizes  
+← `sticky_overlay.html`: Sticky overlay scrolling for large photos, layout with absolute positioning and hardcoded step sizes  
 
 The sticky overlay example:
 
-[Sticky overlay layout](https://video-scroller.glitch.me/index.html)
+[Sticky overlay layout](https://video-scroller.glitch.me/sticky_overlay.html)
 
 The example uses Goldenberg's Sticky Overlay template to implement scrolling interactions with video and images.
 Look through the code to locate the following:
