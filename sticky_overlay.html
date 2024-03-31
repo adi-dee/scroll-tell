@@ -71,32 +71,26 @@ figure {
   z-index: 0;
 }
 
-figure .p-left {
+.step-0 p {
   text-align: left;
   padding: 1rem;
-  position: absolute;
-  top: 50%;
-  left: 60%;
-  -moz-transform: translate(-50%, -60%);
-  -webkit-transform: translate(-50%, -60%);
-  transform: translate(-50%, -60%);
-  font-size: 2rem;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 1);
-}
-
-figure .p-right {
-  text-align: left;
-  padding: 1rem;
-  position: absolute;
   top: 50%;
   left: 30%;
-  -moz-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
   font-size: 2rem;
   font-weight: 900;
   color: rgba(255, 255, 255, 1);
+  margin-bottom: 350px;
+  z-index: 10;
+  z-index: 1;
+  position: relative;
+}
+
+ .p-left {
+  margin-right: 60%;
+}
+
+ .p-right {
+margin-left: 30%
 }
 
 
@@ -116,7 +110,34 @@ article {
 .step {
   margin: 0 auto 2rem auto;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.5); /* Make background semi-transparent to see the background image */
+}
+
+.step-0 {
+  margin: 0 auto 2rem auto;
+  color: #fff;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5); /* Make background semi-transparent to see the background image */
+}
+
+.parallex-sec {
+  height: 250vh;
+  background-image: url('view.webp'); /* Assuming full path is provided */
+  background-size: cover;
+  background-attachment: fixed; /* This creates the simple parallax effect */
+
+}
+
+
+.tree {
+  position: absolute;
+  bottom: 0; /* Start at the bottom */
+  width: 70%; /* Example size, adjust as needed */
+  height: 100%; /* Example size, adjust as needed */
+  background-image: url('tree.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 0;
 }
 
 .step:last-child {
@@ -174,8 +195,26 @@ article {
         </p>
         
       </section>
-      
-      
+      <section class="parallex-sec step-0">
+        <div class="tree tree-1"></div>
+        <div class="tree tree-2"></div>
+        <div class="tree tree-3"></div>  
+        <div> 
+          <p class="p-left p-1">
+            “a young nation has shallow roots and the slightest disturbance can throw out the equilibrium, patriotically speaking. 
+          </p>
+        </div>
+        <div> 
+          <p class="p-right p-2">
+              Nationalism is nothing less than clutching at straws.” 
+          </p>
+        </div>
+        <div> 
+          <p class="p-left p-3">
+              This warning in the lovely 1998 novel “Eucalyptus״ is written by Australian author Murray Bail
+          </p>
+        </div>
+    </section>
       <section class="scrolly">
         <figure style="height: 336.5px; top: 168.25px">
           <div class="frame">
@@ -190,20 +229,7 @@ article {
             </figcaption>
           </div>
         </figure>
-
         <article>
-          <div class="step"
-          data-step="1"
-       style="height: 350px"
-       data-scrollama-index="0"
-           data-value="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/mina_running.jpeg?v=1659890139451"
-       data-text="Mina Guli is running 200 marathons to draw attention to the world water crisis. "
-       data-attribute="src"
-       data-target="imgObj"
-          ><p class="p-left">
-            “a young nation has shallow roots and the slightest disturbance can throw out the equilibrium, patriotically speaking. 
-          </p></div>
-
           <div class="step"
                data-step="1"
             style="height: 504px"
@@ -349,8 +375,23 @@ Uzbekistan"
     
 
     <script src="d3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scrollama.min.js"></script>
     <script>
+
+      $(document).ready(function(){
+        // Function to be called when scrolling occurs
+        $(window).scroll(function() {
+          // Calculate the parallax effect for each tree based on the scroll position
+          var scrolled = $(window).scrollTop();
+          
+          $('.tree-1').css('transform', 'translateX(' + (scrolled * 0.5) + 'px)');
+          $('.tree-2').css('transform', 'translateX(' + (scrolled * 0.3) + 'px)');
+          $('.tree-3').css('transform', 'translateX(' + (scrolled * 0.1) + 'px)');
+        });
+      });
+
+
       // using d3 for convenience
       var main = d3.select("main");
       var scrolly = main.selectAll(".scrolly");
