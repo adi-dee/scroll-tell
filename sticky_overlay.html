@@ -10,128 +10,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css" />
     <style>
-      body {
-         background-color: #000;
-      }
-      
-      #intro {
-        max-width: 40rem;
-        margin: 1rem auto;
-        text-align: center;
-        margin-bottom: 320px;
-      }
-
-      .intro__hed {
-        font-size: 3rem;
-        margin: 2rem auto 0.5rem auto;
-      }
-
-      .intro__dek {
-        color: rgba(255, 255, 255, 0.55);
-      }
-        #outro {
-        max-width: 40rem;
-        margin: 1rem auto;
-        text-align: center;
-        margin-bottom: 320px;
-                  color: rgba(255, 255, 255, 0.7);
-      background-color: rgba(0, 0, 0, 0.3);
-      }
-      .outro__hed {
-        font-size: 2rem;
-        margin: 2rem auto 0.5rem auto;}
-      }
-      .outro__dek {
-        font-size: 1rem;
-         margin: 2rem auto 0.5rem auto;
+     body {
+  background-color: #000;
 }
 
-      figcaption {
-        text-align: left;
-        padding: 0.5rem;
-        font-size: 0.8rem;
-        font-weight: 1;
-        color: rgba(255, 255, 255, 0.6);
-      }
+#intro {
+  max-width: 40rem;
+  margin: 1rem auto 320px auto; /* Combined margin declaration */
+  text-align: center;
+}
+
+.intro__hed {
+  font-size: 3rem;
+  margin: 2rem auto 0.5rem auto;
+}
+
+.intro__dek {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+#outro {
+  max-width: 40rem;
+  margin: 1rem auto 320px auto; /* Combined margin declaration */
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.outro__hed {
+  font-size: 2rem;
+  margin: 2rem auto 0.5rem auto;
+}
+
+.outro__dek {
+  font-size: 1rem;
+  margin: 2rem auto 0.5rem auto;
+}
+
+figcaption {
+  text-align: left;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 1; /* Note: Consider correcting the font-weight value */
+  color: rgba(255, 255, 255, 0.6);
+}
+
+figure {
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100vw;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  background-color: #8a8a8a;
+  z-index: 0;
+}
+
+figure .p-left {
+  text-align: left;
+  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  -moz-transform: translate(-50%, -60%);
+  -webkit-transform: translate(-50%, -60%);
+  transform: translate(-50%, -60%);
+  font-size: 2rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 1);
+}
+
+figure .p-right {
+  text-align: left;
+  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 1);
+}
 
 
-      figure {
-        position: -webkit-sticky;
-        position: sticky;
-        width: 100vw;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        margin: 0;
-        -webkit-transform: translate3d(0, 0, 0);
-        -moz-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-        background-color: #8a8a8a;
-        z-index: 0;
-      }
-      
+.scrolly {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 0;
+}
 
-      figure p {
-        text-align: left;
-        padding: 1rem;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -moz-transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        font-size: 2rem;
-        font-weight: 900;
-        color: rgba(255, 255, 255, 1);
-      }
+article {
+  position: relative;
+  padding: 0;
+  max-width: 40rem;
+  margin: 0 auto;
+}
 
-    .scrolly {
-        position: relative;
-        background-color: rgba(0, 0, 0, 0.9);
-        padding: 0;
-      }
+.step {
+  margin: 0 auto 2rem auto;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
-      article {
-        position: relative;
-        padding: 0;
-        max-width: 40rem;
-        margin: 0 auto;
-      }
+.step:last-child {
+  margin-bottom: 50rem;
+}
 
-      
-      .step {
-        margin: 0 auto 2rem auto;
-        color: #fff;
-        background-color: rgba(0, 0, 0, 0.1);
-      }
+.step.is-active p {
+  background-color: rgba(0, 0, 0, 0.9);
+}
 
-      .step:last-child {
-        margin-bottom: 50rem;
-      }
+.step p {
+  text-align: left;
+  padding: 1rem;
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
-      .step.is-active p {
-       background-color: rgba(0, 0, 0, 0.9);
-      }
+#background-video {
+  width: 100vw;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
 
-      .step p {
-        text-align: center;
-        padding: 1rem;
-        font-size: 1.5rem;
-        background-color: rgba(0, 0, 0, 0.1);
-      }
-
-      #background-video {
-        width: 100vw;
-        object-fit: cover;
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        z-index: -1;
-      }
-   
   
      </style>
   </head>
@@ -152,9 +165,12 @@
           />
         </video>
 
-        <h1 class="intro__hed">No Water, No Life</h1>
+        <h1 class="intro__hed">The Tree of Jews:</h1>
         <p class="intro__dek">
-          Take action on the world water crisis
+          The Battle Over Israel's Eucalyptus Trees
+        </p>
+        <br>
+        <p>Though eucalyptus trees were imported from Australia to drain swamps, today there's debate over whether they're true citizens – or just invaders
         </p>
         
       </section>
@@ -169,12 +185,25 @@
               src="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/mina_running.jpeg?v=1659890139451" id="imgObj"
               width="100%"
             />
-            <figcaption id="captionObj">Mina Guli is running 200 marathons to draw attention to the world water crisis. </figcaption>
+            <figcaption id="captionObj">
+              “a young nation has shallow roots and the slightest disturbance can throw out the equilibrium, patriotically speaking. 
+            </figcaption>
           </div>
         </figure>
 
         <article>
-          
+          <div class="step"
+          data-step="1"
+       style="height: 350px"
+       data-scrollama-index="0"
+           data-value="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/mina_running.jpeg?v=1659890139451"
+       data-text="Mina Guli is running 200 marathons to draw attention to the world water crisis. "
+       data-attribute="src"
+       data-target="imgObj"
+          ><p class="p-left">
+            “a young nation has shallow roots and the slightest disturbance can throw out the equilibrium, patriotically speaking. 
+          </p></div>
+
           <div class="step"
                data-step="1"
             style="height: 504px"
@@ -183,9 +212,9 @@
             data-text="Mina Guli is running 200 marathons to draw attention to the world water crisis. "
             data-attribute="src"
             data-target="imgObj"
-               ><p>
-        Environmental activist Mina Guli set out to run 200 marathons in 2022 to raise awareness of the global water crisis.
-        </p></div>
+               ><p class="p-right">
+                Nationalism is nothing less than clutching at straws.” 
+              </p></div>
           <div class="step"
                     data-step="2"
             style="height: 504px"
@@ -195,10 +224,12 @@
 Uzbekistan"
             data-attribute="src"
             data-target="imgObj"
-               ><p>For Marathon 28, Mina ran across the dried bed of the Aral Sea.</p></div>
+               ><p class="p-left">
+                This warning in the lovely 1998 novel “Eucalyptus״ is written by Australian author Murray Bail
+              </p></div>
       <div class="step"
                 data-step="3"
-            style="height: 504px"
+            style="height: 350px"
             data-scrollama-index="4"
                 data-value="https://cdn.glitch.global/63423c5f-5098-4a28-8b25-50cda668df62/ship_graveyard.png?v=1659377819289"
             data-text="Ship Graveyard, Muynak, Uzbekistan,
